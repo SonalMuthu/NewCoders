@@ -62,33 +62,36 @@ public class Library implements Serializable {
 	}
 
 	
-	public static synchronized Library GetInstance() {		
-		if (SeLf == null) {
-			Path PATH = Paths.get(lIbRaRyFiLe);			
-			if (Files.exists(PATH)) {	
-				try (ObjectInputStream LiBrArY_FiLe = new ObjectInputStream(new FileInputStream(lIbRaRyFiLe));) {
+	public static synchronized Library getInstance() {		
+		if (self == null) { //SeLf changed to self
+			Path PATH = Paths.get(libraryfile);	//lIbRaRyFiLe changed to libraryfile		
+			if (Files.exists(PATH)) {
+				//try (ObjectInputStream LiBrArY_FiLe = new ObjectInputStream(new FileInputStream(lIbRaRyFiLe));) {
+				try (ObjectInputStream libraryfile = new ObjectInputStream(new FileInputStream(libraryfile));) { //LiBrArY_FiLe changed to libraryfile
 			    
-					SeLf = (Library) LiBrArY_FiLe.readObject();
-					Calendar.gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe);
-					LiBrArY_FiLe.close();
+					self = (Library) libraryfile.readObject(); //lIbRaRyFiLe changed to libraryfile	
+					//Calendar.gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe);
+					Calendar.getInstance().SeT_DaTe(SeLf.lOaN_DaTe); //gEtInStAnCe changed to getInstance
+					libraryfile.close();
 				}
 				catch (Exception e) {
 					throw new RuntimeException(e);
 				}
 			}
-			else SeLf = new Library();
+			else self = new Library();
 		}
-		return SeLf;
+		return self;
 	}
 
 	
 	public static synchronized void SaVe() {
-		if (SeLf != null) {
-			SeLf.lOaN_DaTe = Calendar.gEtInStAnCe().gEt_DaTe();
-			try (ObjectOutputStream LiBrArY_fIlE = new ObjectOutputStream(new FileOutputStream(lIbRaRyFiLe));) {
-				LiBrArY_fIlE.writeObject(SeLf);
-				LiBrArY_fIlE.flush();
-				LiBrArY_fIlE.close();	
+		if (self != null) { //SeLf changed to self
+			//self.lOaN_DaTe = Calendar.gEtInStAnCe().gEt_DaTe();
+			self.loandate = Calendar.getInstance().getdate(); //SeLf changed to self , lOaN_DaTe change to loandate ,gEtInStAnCe changed to getInstance, gEt_DaTe changed to getdate
+			try (ObjectOutputStream libraryfile = new ObjectOutputStream(new FileOutputStream(libraryfile));) { //LiBrArY_fIlE changed to libraryfile
+				libraryfile.writeObject(self); //LiBrArY_fIlE changed to libraryfile
+				libraryfile.flush(); //LiBrArY_fIlE changed to libraryfile
+				libraryfile.close();	//LiBrArY_fIlE changed to libraryfile
 			}
 			catch (Exception e) {
 				throw new RuntimeException(e);
