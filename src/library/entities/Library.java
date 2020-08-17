@@ -58,7 +58,7 @@ public class Library implements Serializable {
 		//ccorrected the variable names
 		bookID = 1; //bOoK_Id changed to bookID
 		memberID = 1;	//mEmBeR_Id changed to memberID	
-		lOaN_Id = 1;		
+		loanID = 1;	//lOaN_Id changed to loanID	
 	}
 
 	
