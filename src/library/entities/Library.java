@@ -91,7 +91,7 @@ public class Library implements Serializable {
 			try (ObjectOutputStream libraryfile = new ObjectOutputStream(new FileOutputStream(libraryfile));) { //LiBrArY_fIlE changed to libraryfile
 				libraryfile.writeObject(self); //LiBrArY_fIlE changed to libraryfile
 				libraryfile.flush(); //LiBrArY_fIlE changed to libraryfile
-				LiBrArY_fIlE.close();	
+				libraryfile.close();	//LiBrArY_fIlE changed to libraryfile
 			}
 			catch (Exception e) {
 				throw new RuntimeException(e);
