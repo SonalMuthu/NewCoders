@@ -14,9 +14,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//Author :Sonal
+//Reviwer : Milan
+// Mediator : Akshay
+
 @SuppressWarnings("serial")
 public class Library implements Serializable {
 	
+	// changed the constains variables to correct way 
 	private static final String LIBRARY_FILE = "library.obj";
 	private static final int LOAN_LIMIT = 2;
 	private static final int LOAN_PERIOD = 2;
