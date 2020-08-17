@@ -62,7 +62,7 @@ public class Library implements Serializable {
 	}
 
 	
-	public static synchronized Library GetInstance() {		
+	public static synchronized Library getInstance() {		
 		if (self == null) { //SeLf changed to self
 			Path PATH = Paths.get(libraryfile);	//lIbRaRyFiLe changed to libraryfile		
 			if (Files.exists(PATH)) {
@@ -71,7 +71,7 @@ public class Library implements Serializable {
 			    
 					self = (Library) libraryfile.readObject(); //lIbRaRyFiLe changed to libraryfile	
 					//Calendar.gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe);
-					Calendar.GetInstance().SeT_DaTe(SeLf.lOaN_DaTe); //gEtInStAnCe changed to GetInstance
+					Calendar.getInstance().SeT_DaTe(SeLf.lOaN_DaTe); //gEtInStAnCe changed to getInstance
 					libraryfile.close();
 				}
 				catch (Exception e) {
@@ -85,8 +85,9 @@ public class Library implements Serializable {
 
 	
 	public static synchronized void SaVe() {
-		if (SeLf != null) {
-			SeLf.lOaN_DaTe = Calendar.gEtInStAnCe().gEt_DaTe();
+		if (self != null) { //SeLf changed to self
+			//self.lOaN_DaTe = Calendar.gEtInStAnCe().gEt_DaTe();
+			self.loandate = Calendar.getInstance().gEt_DaTe(); //SeLf changed to self , lOaN_DaTe change to loandate ,gEtInStAnCe changed to getInstance, 
 			try (ObjectOutputStream LiBrArY_fIlE = new ObjectOutputStream(new FileOutputStream(lIbRaRyFiLe));) {
 				LiBrArY_fIlE.writeObject(SeLf);
 				LiBrArY_fIlE.flush();
