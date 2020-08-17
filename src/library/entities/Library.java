@@ -49,7 +49,8 @@ public class Library implements Serializable {
 	
 
 	private Library() {
-		CaTaLoG = new HashMap<>();
+		//change variables 
+		CaTaLoG = new HashMap<>(); //CaTaLoG changed to catlog
 		MeMbErS = new HashMap<>();
 		LoAnS = new HashMap<>();
 		CuRrEnT_LoAnS = new HashMap<>();
