@@ -29,6 +29,7 @@ public class Library implements Serializable {
 	private static final double MAX_FINES_OWED = 1.0;
 	private static final double DAMAGE_FEE = 2.0;
 	
+	//change the variable names to correct code styles
 	private static LibrarySelf;
 	private int bookid;
 	private int memberid;
