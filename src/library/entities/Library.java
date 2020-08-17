@@ -78,9 +78,9 @@ public class Library implements Serializable {
 					throw new RuntimeException(e);
 				}
 			}
-			else SeLf = new Library();
+			else self = new Library();
 		}
-		return SeLf;
+		return self;
 	}
 
 	
