@@ -29,28 +29,36 @@ public class Library implements Serializable {
 	private static final double MAX_FINES_OWED = 1.0;
 	private static final double DAMAGE_FEE = 2.0;
 	
+	//change the variable names to correct code styles
 	private static LibrarySelf;
 	private int bookid;
 	private int memberid;
 	private int loanid;
 	private Date loandate;
 	
-	private Map<Integer, Book> CaTaLoG;
-	private Map<Integer, Member> MeMbErS;
-	private Map<Integer, Loan> LoAnS;
-	private Map<Integer, Loan> CuRrEnT_LoAnS;
-	private Map<Integer, Book> DaMaGeD_BoOkS;
+	//private Map<Integer, Book> CaTaLoG;
+	private Map<Integer, Book> catlog; //CaTaLoG changed to catlog
+	//private Map<Integer, Member> MeMbErS;
+	private Map<Integer, Member> members; // MeMbErS changed to members
+	//private Map<Integer, Loan> LoAnS;
+	private Map<Integer, Loan> loans; //LoAnS changed to loans
+	//private Map<Integer, Loan> CuRrEnT_LoAnS;
+	private Map<Integer, Loan> currentloans; //CuRrEnT_LoAnS changed to currentloans
+	//private Map<Integer, Book> DaMaGeD_BoOkS;
+	private Map<Integer, Book> damagebooks;//DaMaGeD_BoOkS changed to damagebooks
 	
 
 	private Library() {
-		CaTaLoG = new HashMap<>();
-		MeMbErS = new HashMap<>();
-		LoAnS = new HashMap<>();
-		CuRrEnT_LoAnS = new HashMap<>();
-		DaMaGeD_BoOkS = new HashMap<>();
-		bOoK_Id = 1;
-		mEmBeR_Id = 1;		
-		lOaN_Id = 1;		
+		//change variables 
+		catlog = new HashMap<>(); //CaTaLoG changed to catlog
+		members = new HashMap<>(); //MeMbErS changed to members
+		loans = new HashMap<>(); //LoAnS changed to loans
+		currentloans = new HashMap<>();//CuRrEnT_LoAnS channged to currentloans
+		damagebooks = new HashMap<>();//DaMaGeD_BoOkS changed to damagebooks
+		//ccorrected the variable names
+		bookId = 1; //bOoK_Id changed to bookId
+		memberId = 1;//mEmBeR_Id changed to memberId	
+		loanId = 1;//lOaN_Id changed to loanId	
 	}
 
 	
