@@ -36,6 +36,7 @@ public class Library implements Serializable {
 	private int loanid;
 	private Date loandate;
 	
+	
 	private Map<Integer, Book> CaTaLoG;
 	private Map<Integer, Member> MeMbErS;
 	private Map<Integer, Loan> LoAnS;
