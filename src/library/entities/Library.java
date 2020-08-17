@@ -65,12 +65,14 @@ public class Library implements Serializable {
 	public static synchronized Library GetInstance() {		
 		if (self == null) { //SeLf changed to self
 			Path PATH = Paths.get(libraryfile);	//lIbRaRyFiLe changed to libraryfile		
-			if (Files.exists(PATH)) {	
-				try (ObjectInputStream LiBrArY_FiLe = new ObjectInputStream(new FileInputStream(lIbRaRyFiLe));) {
+			if (Files.exists(PATH)) {
+				//try (ObjectInputStream LiBrArY_FiLe = new ObjectInputStream(new FileInputStream(lIbRaRyFiLe));) {
+				try (ObjectInputStream libraryfile = new ObjectInputStream(new FileInputStream(libraryfile));) { //LiBrArY_FiLe changed to libraryfile
 			    
-					SeLf = (Library) LiBrArY_FiLe.readObject();
-					Calendar.gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe);
-					LiBrArY_FiLe.close();
+					self = (Library) libraryfile.readObject(); //lIbRaRyFiLe changed to libraryfile	
+					//Calendar.gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe);
+					Calendar.GetInstance().SeT_DaTe(SeLf.lOaN_DaTe); //gEtInStAnCe changed to GetInstance
+					libraryfile.close();
 				}
 				catch (Exception e) {
 					throw new RuntimeException(e);
