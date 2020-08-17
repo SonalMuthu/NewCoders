@@ -63,7 +63,7 @@ public class Library implements Serializable {
 
 	
 	public static synchronized Library GetInstance() {		
-		if (SeLf == null) {
+		if (self == null) { //SeLf changed to self
 			Path PATH = Paths.get(lIbRaRyFiLe);			
 			if (Files.exists(PATH)) {	
 				try (ObjectInputStream LiBrArY_FiLe = new ObjectInputStream(new FileInputStream(lIbRaRyFiLe));) {
