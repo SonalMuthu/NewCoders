@@ -53,7 +53,7 @@ public class Library implements Serializable {
 		catlog = new HashMap<>(); //CaTaLoG changed to catlog
 		members = new HashMap<>(); //MeMbErS changed to members
 		loans = new HashMap<>(); //LoAnS changed to loans
-		CuRrEnT_LoAnS = new HashMap<>();
+		currentloans = new HashMap<>();//CuRrEnT_LoAnS channged to currentloans
 		DaMaGeD_BoOkS = new HashMap<>();
 		bOoK_Id = 1;
 		mEmBeR_Id = 1;		
