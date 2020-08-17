@@ -90,7 +90,7 @@ public class Library implements Serializable {
 			self.loandate = Calendar.getInstance().getdate(); //SeLf changed to self , lOaN_DaTe change to loandate ,gEtInStAnCe changed to getInstance, gEt_DaTe changed to getdate
 			try (ObjectOutputStream libraryfile = new ObjectOutputStream(new FileOutputStream(libraryfile));) { //LiBrArY_fIlE changed to libraryfile
 				libraryfile.writeObject(self); //LiBrArY_fIlE changed to libraryfile
-				LiBrArY_fIlE.flush();
+				libraryfile.flush(); //LiBrArY_fIlE changed to libraryfile
 				LiBrArY_fIlE.close();	
 			}
 			catch (Exception e) {
