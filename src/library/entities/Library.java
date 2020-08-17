@@ -42,8 +42,10 @@ public class Library implements Serializable {
 	private Map<Integer, Member> members; // MeMbErS changed to members
 	//private Map<Integer, Loan> LoAnS;
 	private Map<Integer, Loan> loans; //LoAnS changed to loans
-	private Map<Integer, Loan> CuRrEnT_LoAnS;
-	private Map<Integer, Book> DaMaGeD_BoOkS;
+	//private Map<Integer, Loan> CuRrEnT_LoAnS;
+	private Map<Integer, Loan> currentloans; //CuRrEnT_LoAnS changed to currentloans
+	//private Map<Integer, Book> DaMaGeD_BoOkS;
+	private Map<Integer, Book> damagebooks;//DaMaGeD_BoOkS changed to damagebooks
 	
 
 	private Library() {
