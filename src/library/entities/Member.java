@@ -29,14 +29,21 @@ public class Member implements Serializable {
 	private Map<Integer, Loan> currentLoans;				// changed variable name cUrReNt_lOaNs to currentLoans
 
 	
-	public Member(String lAsT_nAmE, String fIrSt_nAmE, String eMaIl_aDdReSs, int pHoNe_nUmBeR, int mEmBeR_iD) {
-		this.LaSt_NaMe = lAsT_nAmE;
-		this.FiRsT_NaMe = fIrSt_nAmE;
-		this.EmAiL_AdDrEsS = eMaIl_aDdReSs;
-		this.PhOnE_NuMbEr = pHoNe_nUmBeR;
-		this.MeMbEr_Id = mEmBeR_iD;
+	// public Member(String lAsT_nAmE, String fIrSt_nAmE, String eMaIl_aDdReSs, int pHoNe_nUmBeR, int mEmBeR_iD) 
+	public Member(String lastName, String firstName, String emailAdress, int phoneNumber, int memberId) {  // changing variable name according code style guideline
+		// this.LaSt_NaMe = lAsT_nAmE;
+		this.lastName = lastName;					// changed variable name LaSt_NaMe to lastName
+		// this.FiRsT_NaMe = fIrSt_nAmE;
+		this.firstName = firstName;					// changed variable name FiRsT_NaMe to firstName
+		// this.EmAiL_AdDrEsS = eMaIl_aDdReSs;
+		this.emailAdress = emailAdress;					// changed variable name EmAiL_AdDrEsS to emailAdress
+		// this.PhOnE_NuMbEr = pHoNe_nUmBeR;
+		this.phoneNumber = phoneNumber;					// changed variable name PhOnE_NuMbEr to phoneNumber
+		// this.MeMbEr_Id = mEmBeR_iD;
+		this.memberId = memberId;					// changed variable name MeMbEr_Id to memberId
 		
-		this.cUrReNt_lOaNs = new HashMap<>();
+		// this.cUrReNt_lOaNs = new HashMap<>();
+		this.currentLoans = new HashMap<>();				// hanged variable name cUrReNt_lOaNs to currentLoans
 	}
 
 	
