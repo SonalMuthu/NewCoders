@@ -100,23 +100,23 @@ public class Library implements Serializable {
 	}
 
 	
-	public int gEt_BoOkId() {
-		return bOoK_Id;
+	public int getBookID() { // gEt_BoOkId changed to getBookID
+		return bookId; //bOoK_Id changed to bookId
 	}
 	
 	
-	public int gEt_MeMbEr_Id() {
-		return mEmBeR_Id;
+	public int getMemberId() { //gEt_MeMbEr_Id changed to getMemberId
+		return memberId; //mEmBeR_Id changed to memberId
 	}
 	
 	
-	private int gEt_NeXt_BoOk_Id() {
-		return bOoK_Id++;
+	private int getNextBookId() { //gEt_NeXt_BoOk_Id changed to getNextBookId
+		return bookId++; //bOoK_Id changed to bookId
 	}
 
 	
-	private int gEt_NeXt_MeMbEr_Id() {
-		return mEmBeR_Id++;
+	private int getNextMemberId() { //gEt_NeXt_MeMbEr_Id changed to getNextMemberId
+		return memberId++; //mEmBeR_Id changed to memberId
 	}
 
 	
