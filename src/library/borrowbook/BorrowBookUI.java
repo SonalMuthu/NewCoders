@@ -30,7 +30,7 @@ public class BorrowBookUI {
 		
 		
 	private void Output(Object object) { //OuTpUt changed to Output //ObJeCt changes to object
-		System.out.println(ObJeCt);
+		System.out.println(object); //ObJeCt changes to object 
 	}
 	
 			
