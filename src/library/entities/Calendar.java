@@ -11,11 +11,13 @@ public class Calendar {
 	
 	// private static Calendar sElF;
 	private static Calendar self;    						// variable changed from sElF to self
-	private static java.util.Calendar cAlEnDaR;
+	// private static java.util.Calendar cAlEnDaR;
+	private static java.util.Calendar calendar;
 	
 	
 	private Calendar() {
-		cAlEnDaR = java.util.Calendar.getInstance();
+		// cAlEnDaR = java.util.Calendar.getInstance();
+		calendar = java.util.Calendar.getInstance();
 	}
 	
 
@@ -33,15 +35,16 @@ public class Calendar {
 	}
 	
 	public void incrementDate(int days) {
-		cAlEnDaR.add(java.util.Calendar.DATE, days);		
+		// cAlEnDaR.add(java.util.Calendar.DATE, days);	
+		calendar.add(java.util.Calendar.DATE, days);
 	}
 
 	
 	//public synchronized void SeT_DaTe(Date DaTe)
 		public synchronized void setDate(Date date) {
 		try {
-			// cAlEnDaR.setTime(DaTe);
-			calendar.setTime(Date);
+		// cAlEnDaR.setTime(DaTe);
+		calendar.setTime(Date);
 		// cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);	
 	        calendar.set(java.util.Calendar.HOUR_OF_DAY, 0); 
 		// cAlEnDaR.set(java.util.Calendar.MINUTE, 0); 
@@ -95,7 +98,7 @@ public class Calendar {
 		// long Diff_Millis = gEt_DaTe().getTime() - targetDate.getTime();
 		long diffMillis = getDate().getTime() - targetDate.getTime();
 	        // long Diff_Days = TimeUnit.DAYS.convert(Diff_Millis, TimeUnit.MILLISECONDS);		
-	        long Diff_Days = TimeUnit.DAYS.convert(diffMillis, timeUnit.MILLISECONDS);
+	        long diffDays = TimeUnit.DAYS.convert(diffMillis, timeUnit.MILLISECONDS);
 
 	    // return Diff_Days;
 	    return diffDays;
