@@ -51,11 +51,15 @@ public class BorrowBookUI {
 				output("Borrowing Cancelled"); //OuTpUt changed to output
 				return;
 
-				
-			case READY:
+			/*			case READY:
 				String MEM_STR = iNpUT("Swipe member card (press <enter> to cancel): ");
 				if (MEM_STR.length() == 0) {
 					CoNtRoL.CaNcEl();
+					break;*/	
+			case READY:
+				String MEM_STR = iNpUT("Swipe member card (press <enter> to cancel): ");
+				if (MEM_STR.length() == 0) {
+					control.cancel(); //CoNtRoL changed to control //CaNcEl changed to cancel
 					break;
 				}
 				try {
