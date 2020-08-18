@@ -225,36 +225,46 @@ public class Library implements Serializable {
 		return 0.0;		
 	}
 
-
-	public void DiScHaRgE_LoAn(Loan cUrReNt_LoAn, boolean iS_dAmAgEd) {
-		Member mEmBeR = cUrReNt_LoAn.GeT_MeMbEr();
-		Book bOoK  = cUrReNt_LoAn.GeT_BoOk();
-		
-		double oVeR_DuE_FiNe = CaLcUlAtE_OvEr_DuE_FiNe(cUrReNt_LoAn);
-		mEmBeR.AdD_FiNe(oVeR_DuE_FiNe);	
-		
-		mEmBeR.dIsChArGeLoAn(cUrReNt_LoAn);
+		//DiScHaRgE_LoAn chnaged to dischargeLoan 
+		//cUrReNt_LoAn changed currentloan 
+		//iS_dAmAgEd changed to isdamaged
+	public void dischargeLoan(Loan currentloan, boolean isdamaged) { 
+		Member member = currentloan.getmember(); //mEmBeR member // GeT_MeMbEr changed to getmember
+		Book book  = currentloan.getbook();
+		//double oVeR_DuE_FiNe = CaLcUlAtE_OvEr_DuE_FiNe(cUrReNt_LoAn);
+		double overduefine = calculatefine(currentloan); // change some variables
+		member.addfine(overduefine);	
+	/*
+			mEmBeR.dIsChArGeLoAn(cUrReNt_LoAn);
 		bOoK.ReTuRn(iS_dAmAgEd);
 		if (iS_dAmAgEd) {
 			mEmBeR.AdD_FiNe(damageFee);
 			DaMaGeD_BoOkS.put(bOoK.gEtId(), bOoK);
+			
+	*/
+		//Change variables 
+		member.dischargeloan(currentloan);
+		book.return(isdamaged);
+		if (isdamaged) {
+			member.addfine(damageFee);
+			damagedbooks.put(book.getId(), book);
 		}
-		cUrReNt_LoAn.DiScHaRgE();
-		CuRrEnT_LoAnS.remove(bOoK.gEtId());
+		currentloan.dischargeloan(); // corrected
+		currentloan.remove(book.getId());
 	}
 
 
-	public void cHeCk_CuRrEnT_LoAnS() {
-		for (Loan lOaN : CuRrEnT_LoAnS.values()) 
-			lOaN.cHeCk_OvEr_DuE();
+	public void checkcurrentloan() { //cHeCk_CuRrEnT_LoAnS changed to checkcurrentloan
+		for (Loan loan : currentloan.values()) 
+			loan.checkoverdue();
 				
 	}
 
 
-	public void RePaIr_BoOk(Book cUrReNt_BoOk) {
-		if (DaMaGeD_BoOkS.containsKey(cUrReNt_BoOk.gEtId())) {
-			cUrReNt_BoOk.RePaIr();
-			DaMaGeD_BoOkS.remove(cUrReNt_BoOk.gEtId());
+	public void repairebook(Book currentbook) { //RePaIr_BoOk chaged to repairebook //cUrReNt_BoOk changed to currentbook
+		if (damagedbooks.containsKey(currentbook.getId())) { // DaMaGeD_BoOkS changed to damagedbooks
+			currentbook.repair();
+			damagedbooks.remove(currentbook.getId());
 		}
 		else 
 			throw new RuntimeException("Library: repairBook: book is not damaged");
