@@ -120,18 +120,18 @@ public class Library implements Serializable {
 	}
 
 	
-	private int gEt_NeXt_LoAn_Id() {
-		return lOaN_Id++;
+	private int getNextLoanId() { //gEt_NeXt_LoAn_Id changed to getNextLoanId
+		return loanId++; //lOaN_Id changed to loanId
 	}
 
 	
-	public List<Member> lIsT_MeMbErS() {		
-		return new ArrayList<Member>(MeMbErS.values()); 
+	public List<Member> listMembers() {	//lIsT_MeMbErS changed to listMembers	
+		return new ArrayList<Member>(members.values()); //MeMbErS changed to members
 	}
 
 
-	public List<Book> lIsT_BoOkS() {		
-		return new ArrayList<Book>(CaTaLoG.values()); 
+	public List<Book> listBooks() { //lIsT_BoOkS changed to listBooks		
+		return new ArrayList<Book>(catlog.values()); //CaTaLoG change to catlog
 	}
 
 
