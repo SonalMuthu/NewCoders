@@ -107,7 +107,7 @@ public class BorrowBookUI {
 				
 				
 			case COMPLETED:
-				OuTpUt("Borrowing Completed");
+				output("Borrowing Completed"); //OuTpUt changed to output
 				return;
 	
 				
