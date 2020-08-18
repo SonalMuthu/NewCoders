@@ -1,6 +1,6 @@
 //Author: Akshay Patel
 //Reviewer: Sonal Muthukumarana
-//Mediator:Milan Vala
+//Mediator: Milan Vala
 
 package library.entities;
 import java.util.Date;
@@ -22,11 +22,14 @@ public class Calendar {
 	
 	
 	// public static Calendar gEtInStAnCe()
-	public static Calendar getInstance() {.  				// Method name changed from gEtInStAnCe() to getInstance()
-		if (sElF == null) {
-			sElF = new Calendar();
+	public static Calendar getInstance() {  				// Method name changed from gEtInStAnCe() to getInstance()
+		//if (sElF == null) {
+		if (self == null) {
+		    //sElF = new Calendar();
+		    self = new calendar();					// Adding 4 space. changed Calendar() to calendar()
 		}
-		return sElF;
+		//return sElF;
+		return self;
 	}
 	
         // public void incrementDate(int days) {
@@ -34,9 +37,6 @@ public class Calendar {
 		// cAlEnDaR.add(java.util.Calendar.DATE, days);
 		calendar.add(java.util.Calendar.Date, days);			// Method name changed from cAlEnDaR , DATE to calendar and Date
 	}
-
-
-// ading comment
 
 	
 		//public synchronized void SeT_DaTe(Date DaTe)
