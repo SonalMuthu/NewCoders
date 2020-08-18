@@ -1,4 +1,3 @@
-
 //Author: Akshay Patel
 //Reviewer: Sonal Muthukumarana
 //Mediator: Milan Vala
@@ -38,24 +37,35 @@ public class Calendar {
 	}
 
 	
-	public synchronized void SeT_DaTe(Date DaTe) {
+	//public synchronized void SeT_DaTe(Date DaTe)
+		public synchronized void setDate(Date date) {
 		try {
-			cAlEnDaR.setTime(DaTe);
-	        cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);  
-	        cAlEnDaR.set(java.util.Calendar.MINUTE, 0);  
-	        cAlEnDaR.set(java.util.Calendar.SECOND, 0);  
-	        cAlEnDaR.set(java.util.Calendar.MILLISECOND, 0);
+			// cAlEnDaR.setTime(DaTe);
+			calendar.setTime(Date);
+		// cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);	
+	        calendar.set(java.util.Calendar.HOUR_OF_DAY, 0); 
+		// cAlEnDaR.set(java.util.Calendar.MINUTE, 0); 
+	        calendar.set(java.util.Calendar.MINUTE, 0);  
+		//  cAlEnDaR.set(java.util.Calendar.SECOND, 0); 
+	        calendar.set(java.util.Calendar.SECOND, 0);  
+		//   cAlEnDaR.set(java.util.Calendar.MILLISECOND, 0);
+	        calendar.set(java.util.Calendar.MILLISECOND, 0);
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
 		}	
 	}
-	public synchronized Date gEt_DaTe() {
+	// public synchronized Date gEt_DaTe()
+	public synchronized Date getDate() {
 		try {
-	        cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);  
-	        cAlEnDaR.set(java.util.Calendar.MINUTE, 0);  
-	        cAlEnDaR.set(java.util.Calendar.SECOND, 0);  
-	        cAlEnDaR.set(java.util.Calendar.MILLISECOND, 0);
+		// cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);	
+	        calendar.set(java.util.Calendar.HOUR_OF_DAY, 0);  
+	        // cAlEnDaR.set(java.util.Calendar.MINUTE, 0);  
+		calendar.set(java.util.Calendar.MINUTE, 0); 
+	        // cAlEnDaR.set(java.util.Calendar.SECOND, 0); 
+		calendar.set(java.util.Calendar.SECOND, 0); 
+	        // cAlEnDaR.set(java.util.Calendar.MILLISECOND, 0);
+		calendar.set(java.util.Calendar.MILLISECOND, 0);
 			return cAlEnDaR.getTime();
 		}
 		catch (Exception e) {
@@ -63,11 +73,14 @@ public class Calendar {
 		}	
 	}
 
-	public synchronized Date gEt_DuE_DaTe(int loanPeriod) {
+	// public synchronized Date gEt_DuE_DaTe(int loanPeriod)
+	public synchronized Date getDueDate(int loanPeriod) {
 		Date nOw = gEt_DaTe();
-		cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
+		// cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
+		calendar.add(java.util.Calendar.Date, loanPeriod);
 		Date dUeDaTe = cAlEnDaR.getTime();
-		cAlEnDaR.setTime(nOw);
+		// cAlEnDaR.setTime(nOw);
+		calendar.setTime(now);
 		return dUeDaTe;
 	}
 	
