@@ -100,7 +100,7 @@ public class BorrowBookUI {
 					CoNtRoL.CaNcEl();
 					
 				} else {
-					control.CoMmIt_LoAnS(); //CoNtRoL change to control
+					control.commitLoans(); //CoNtRoL change to control //CoMmIt_LoAnS changed to commitLoans
 					input("Press <any key> to complete "); //iNpUT change to input
 				}
 				break;
