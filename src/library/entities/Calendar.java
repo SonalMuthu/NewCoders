@@ -66,7 +66,8 @@ public class Calendar {
 		calendar.set(java.util.Calendar.SECOND, 0); 
 	        // cAlEnDaR.set(java.util.Calendar.MILLISECOND, 0);
 		calendar.set(java.util.Calendar.MILLISECOND, 0);
-			return cAlEnDaR.getTime();
+			// return cAlEnDaR.getTime();
+			return calendar.getTime();
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
@@ -75,16 +76,20 @@ public class Calendar {
 
 	// public synchronized Date gEt_DuE_DaTe(int loanPeriod)
 	public synchronized Date getDueDate(int loanPeriod) {
-		Date nOw = gEt_DaTe();
+		// Date nOw = gEt_DaTe();
+		Date now = getDate();
 		// cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
-		calendar.add(java.util.Calendar.Date, loanPeriod);
-		Date dUeDaTe = cAlEnDaR.getTime();
+		calendar.add(java.util.Calendar.Date.loanPeriod);
+		// Date dUeDaTe = cAlEnDaR.getTime();
+		Date dueDate = calendar.getTime();
 		// cAlEnDaR.setTime(nOw);
 		calendar.setTime(now);
-		return dUeDaTe;
+		// return dUeDaTe;
+		return dueDate;
 	}
 	
-	public synchronized long GeT_DaYs_DiFfErEnCe(Date targetDate) {
+	// public synchronized long GeT_DaYs_DiFfErEnCe(Date targetDate) {
+	public synchronized long getDaysDifference(Date targetDate) {
 		
 
 		// long Diff_Millis = gEt_DaTe().getTime() - targetDate.getTime();
@@ -92,7 +97,8 @@ public class Calendar {
 	        // long Diff_Days = TimeUnit.DAYS.convert(Diff_Millis, TimeUnit.MILLISECONDS);		
 	        long Diff_Days = TimeUnit.DAYS.convert(diffMillis, timeUnit.MILLISECONDS);
 
-	    return Diff_Days;
+	    // return Diff_Days;
+	    return diffDays;
 	}
 
 }
