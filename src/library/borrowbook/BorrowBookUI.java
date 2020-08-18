@@ -73,7 +73,7 @@ public class BorrowBookUI {
 
 				
 			case RESTRICTED:
-				iNpUT("Press <any key> to cancel");
+				input("Press <any key> to cancel");//iNpUT changed to input
 				CoNtRoL.CaNcEl();
 				break;
 			
