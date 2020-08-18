@@ -45,7 +45,7 @@ public class BorrowBookUI {
 		
 		while (true) {
 			
-			switch (StaTe) {			
+			switch (state) { //StaTe changed to state			
 			
 			case CANCELLED:
 				OuTpUt("Borrowing Cancelled");
