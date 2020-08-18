@@ -169,55 +169,58 @@ public class Library implements Serializable {
 	}
 
 	
-	public int gEt_LoAn_LiMiT() {
-		return lOaNlImIt;
+	public int getLoanLimit() { //gEt_LoAn_LiMiT changed to getLoanLimit
+		return loanlimit; //lOaNlImIt changed to loanlimit
 	}
 
 	
-	public boolean cAn_MeMbEr_BoRrOw(Member member) {		
-		if (member.gEt_nUmBeR_Of_CuRrEnT_LoAnS() == lOaNlImIt ) 
+	public boolean canMemberBorrow(Member member) {	//cAn_MeMbEr_BoRrOw changed to canMemberBorrow	
+		if (member.getNumberOfCurrentLoans() == lOaNlImIt ) // gEt_nUmBeR_Of_CuRrEnT_LoAnS changed to getNumberOfCurrentLoans , //lOaNlImIt changed to loanlimit
 			return false;
 				
-		if (member.FiNeS_OwEd() >= maxFinesOwed) 
+		if (member.finesowed() >= maxFinesOwed) //FiNeS_OwEd changed to finesowed
 			return false;
 				
-		for (Loan loan : member.GeT_LoAnS()) 
-			if (loan.Is_OvEr_DuE()) 
+		for (Loan loan : member.getLoans()) //GeT_LoAnS changed to getLoans
+			if (loan.isoverdue()) //Is_OvEr_DuE changed to isoverdue
 				return false;
 			
 		return true;
 	}
 
 	
-	public int gEt_NuMbEr_Of_LoAnS_ReMaInInG_FoR_MeMbEr(Member MeMbEr) {		
-		return lOaNlImIt - MeMbEr.gEt_nUmBeR_Of_CuRrEnT_LoAnS();
+	public int getRemainingLoans(Member member) {	//gEt_NuMbEr_Of_LoAnS_ReMaInInG_FoR_MeMbEr changed to getRemainingLoans	
+		return loanlimit - member.getcurrentloans(); //lOaNlImIt changed to loanlimit //MeMbEr changed to member
+		//gEt_nUmBeR_Of_CuRrEnT_LoAnS chaanged to getcurrentloans
 	}
 
 	
-	public Loan iSsUe_LoAn(Book book, Member member) {
-		Date dueDate = Calendar.gEtInStAnCe().gEt_DuE_DaTe(loanPeriod);
-		Loan loan = new Loan(gEt_NeXt_LoAn_Id(), book, member, dueDate);
-		member.TaKe_OuT_LoAn(loan);
-		book.BoRrOw();
-		LoAnS.put(loan.GeT_Id(), loan);
-		CuRrEnT_LoAnS.put(book.gEtId(), loan);
+	public Loan issueLoan(Book book, Member member) { //iSsUe_LoAn changed to issueLoan
+		Date dueDate = Calendar.getInstance().getDueDate(loanPeriod); //gEtInStAnCe changed to getInstance //gEt_DuE_DaTe changed to getDueDate
+		Loan loan = new Loan(getnextloanId(), book, member, dueDate); //gEt_NeXt_LoAn_Id changed to getnextloanId
+		member.takeoutloan(loan); //TaKe_OuT_LoAn changed to takeoutloan
+		book.borrow(); //BoRrOw changed to borrow
+		LoAnS.put(loan.getId(), loan); //GeT_Id changed to getId
+		CuRrEnT_LoAnS.put(book.getId(), loan); //gEtId changed to getId
 		return loan;
 	}
 	
 	
-	public Loan GeT_LoAn_By_BoOkId(int bookId) {
-		if (CuRrEnT_LoAnS.containsKey(bookId)) 
-			return CuRrEnT_LoAnS.get(bookId);
+	public Loan getloan(int bookId) { //GeT_LoAn_By_BoOkId changed to getloan
+		if (currentloans.containsKey(bookId)) //CuRrEnT_LoAnS change to currentloans
+			return currentloans.get(bookId); //CuRrEnT_LoAnS change to currentloans
 		
 		return null;
 	}
 
 	
-	public double CaLcUlAtE_OvEr_DuE_FiNe(Loan LoAn) {
-		if (LoAn.Is_OvEr_DuE()) {
-			long DaYs_OvEr_DuE = Calendar.gEtInStAnCe().GeT_DaYs_DiFfErEnCe(LoAn.GeT_DuE_DaTe());
-			double fInE = DaYs_OvEr_DuE * FiNe_PeR_DaY;
-			return fInE;
+	public double calculatefine(Loan loan) { //CaLcUlAtE_OvEr_DuE_FiNe changed to calculatefine //LoAn change to loan
+		if (loan.isoverdue()) { //Is_OvEr_DuE changed to isoverdue
+			//long DaYs_OvEr_DuE = Calendar.gEtInStAnCe().GeT_DaYs_DiFfErEnCe(LoAn.GeT_DuE_DaTe());
+			long daysoverdue = Calendar.getInstance().getDaysDifference(LoAn.getduedate());
+			//double fInE = DaYs_OvEr_DuE * FiNe_PeR_DaY;
+			double fine = daysoverdue * fineperday;
+			return fine;
 		}
 		return 0.0;		
 	}
