@@ -19,7 +19,7 @@ public class BorrowBookUI {
 		this.CoNtRoL = control; //CoNtRoL changed to Control
 		input = new Scanner(System.in); //InPuT  changed to input
 		state = uI_STaTe.INITIALISED; //StaTe changed to state
-		control.SeT_Ui(this); // SeT_Ui
+		control.setUI(this); // SeT_Ui to setUI
 	}
 
 	
@@ -34,8 +34,9 @@ public class BorrowBookUI {
 	}
 	
 			
-	public void SeT_StAtE(uI_STaTe StAtE) {
-		this.StaTe = StAtE;
+	public void SetState(UIState state) { //SeT_StAtE changed to SetState //uI_STaTe changed to UIState
+		//this.StaTe = StAtE;
+		this.state = state;
 	}
 
 	
