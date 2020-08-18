@@ -40,7 +40,7 @@ public class BorrowBookUI {
 	}
 
 	
-	public void RuN() {
+	public void Run() { //RuN changed to Run
 		OuTpUt("Borrow Book Use Case UI\n");
 		
 		while (true) {
