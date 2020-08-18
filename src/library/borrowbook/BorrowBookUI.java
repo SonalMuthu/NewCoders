@@ -113,7 +113,7 @@ public class BorrowBookUI {
 				
 			default:
 				output("Unhandled state"); //OuTpUt change to output
-				throw new RuntimeException("BorrowBookUI : unhandled state :" + StaTe);			
+				throw new RuntimeException("BorrowBookUI : unhandled state :" + state);	//StaTe change to state		
 			}
 		}		
 	}
