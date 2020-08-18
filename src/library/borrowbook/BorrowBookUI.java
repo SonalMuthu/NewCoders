@@ -23,8 +23,8 @@ public class BorrowBookUI {
 	}
 
 	
-	private String Input(String PrOmPt) { //iNpUT changed to Input
-		System.out.print(PrOmPt);
+	private String Input(String prompt) { //iNpUT changed to Input //PrOmPt changed to prompt
+		System.out.print(prompt);
 		return InPuT.nextLine();
 	}	
 		
