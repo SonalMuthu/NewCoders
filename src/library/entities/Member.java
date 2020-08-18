@@ -1,3 +1,7 @@
+//Author: Akshay Patel
+//Reviewer: Milan Vala
+//Mediator: Sonal Muthukumarana
+
 package library.entities;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -8,12 +12,18 @@ import java.util.Map;
 @SuppressWarnings("serial")
 public class Member implements Serializable {
 
-	private String LaSt_NaMe;
-	private String FiRsT_NaMe;
-	private String EmAiL_AdDrEsS;
-	private int PhOnE_NuMbEr;
-	private int MeMbEr_Id;
-	private double FiNeS_OwInG;
+	//private String LaSt_NaMe;
+	private String lastName;						// changed variable name LaSt_NaMe to lastName
+	//private String FiRsT_NaMe;
+	private String firstName;						// changed variable name FiRsT_NaMe to firstName
+	//private String EmAiL_AdDrEsS;
+	private String emailAdress;						// changed variable name EmAiL_AdDrEsS to emailAdress
+	//private int PhOnE_NuMbEr;
+	private int phoneNumber;						// changed variable name PhOnE_NuMbEr to phoneNumber
+	//private int MeMbEr_Id;
+	private int memberId;							// changed variable name MeMbEr_Id to memberId
+	//private double FiNeS_OwInG;
+	private double finesOwing;						// changed variable name FiNeS_OwInG to finesOwing
 	
 	private Map<Integer, Loan> cUrReNt_lOaNs;
 
