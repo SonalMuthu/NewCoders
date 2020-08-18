@@ -41,7 +41,7 @@ public class BorrowBookUI {
 
 	
 	public void Run() { //RuN changed to Run
-		OuTpUt("Borrow Book Use Case UI\n");
+		OuTpUt("Borrow Book Use Case UI\n"); //OuTpUt changed to output
 		
 		while (true) {
 			
