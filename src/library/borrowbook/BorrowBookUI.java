@@ -101,7 +101,7 @@ public class BorrowBookUI {
 					
 				} else {
 					control.CoMmIt_LoAnS(); //CoNtRoL change to control
-					iNpUT("Press <any key> to complete ");
+					input("Press <any key> to complete "); //iNpUT change to input
 				}
 				break;
 				
