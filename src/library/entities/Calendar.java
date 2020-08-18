@@ -33,6 +33,7 @@ public class Calendar {
 		// cAlEnDaR.add(java.util.Calendar.DATE, days);
 		calendar.add(java.util.Calendar.Date, days);			// Method name changed from cAlEnDaR , DATE to calendar and Date
 	}
+
 	
 		//public synchronized void SeT_DaTe(Date DaTe)
 		public synchronized void setDate(Date date) {
