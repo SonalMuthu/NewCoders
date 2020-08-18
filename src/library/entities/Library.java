@@ -140,30 +140,31 @@ public class Library implements Serializable {
 	}
 
 
-	public Member aDd_MeMbEr(String lastName, String firstName, String email, int phoneNo) {		
-		Member member = new Member(lastName, firstName, email, phoneNo, gEt_NeXt_MeMbEr_Id());
-		MeMbErS.put(member.GeT_ID(), member);		
+	public Member addMember(String lastName, String firstName, String email, int phoneNo) { //aDd_MeMbEr change to addMember		
+		Member member = new Member(lastName, firstName, email, phoneNo, getNextMemberId()); //gEt_NeXt_MeMbEr_Id changed to getNextMemberId 
+		MeMbErS.put(member.getId(), member);	//MeMbErS changed to members
+		//GeT_ID changed to getId
 		return member;
 	}
 
 	
-	public Book aDd_BoOk(String a, String t, String c) {		
-		Book b = new Book(a, t, c, gEt_NeXt_BoOk_Id());
-		CaTaLoG.put(b.gEtId(), b);		
+	public Book addbook(String a, String t, String c) {	//aDd_BoOk change to addbook	
+		Book b = new Book(a, t, c, getnextbookId()); //gEt_NeXt_BoOk_Id change to getnextbookId
+		catalog.put(b.gEtId(), b);  // CaTaLoG change to catalog	//gEtId change to getId	
 		return b;
 	}
 
 	
-	public Member gEt_MeMbEr(int memberId) {
-		if (MeMbErS.containsKey(memberId)) 
-			return MeMbErS.get(memberId);
+	public Member getMember(int memberId) { //gEt_MeMbEr changed to getMember
+		if (members.containsKey(memberId)) //MeMbErS changed to members
+			return MeMbErS.get(memberId); //MeMbErS changed to members
 		return null;
 	}
 
 	
-	public Book gEt_BoOk(int bookId) {
-		if (CaTaLoG.containsKey(bookId)) 
-			return CaTaLoG.get(bookId);		
+	public Book gEt_BoOk(int bookId) { //gEt_BoOk changed to getBook
+		if (catalog.containsKey(bookId)) //CaTaLoG changed to catalog
+			return catalog.get(bookId); //CaTaLoG changed to catalog		
 		return null;
 	}
 
