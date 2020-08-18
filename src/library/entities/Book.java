@@ -30,7 +30,8 @@ public class Book implements Serializable {
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Book: ").append(iD).append("\n")
+		//sb.append("Book: ").append(iD).append("\n")
+		sb.append("Book: ").append(id).append("\n")// name change
 		  .append("  Title:  ").append(tItLe).append("\n")
 		  .append("  Author: ").append(AuThOr).append("\n")
 		  .append("  CallNo: ").append(CALLNO).append("\n")
