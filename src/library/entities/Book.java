@@ -5,19 +5,24 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class Book implements Serializable {
 	
-	//private String tItLe(variable name changed)
-	private String title;
-	private String AuThOr;
+
+	private String tItLe;
+	//private String AuThOr;//variable name changed
+	private String author;
+
 	private String CALLNO;
-	private int iD;
+	private int id;// variable name changed
 	
-	private enum sTaTe { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
-	private sTaTe StAtE;
-	
+	//private enum sTaTe { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
+	private enum state { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
+	//private sTaTe StAtE;
+	private state;
 	
 	public Book(String author, String title, String callNo, int id) {
-		this.AuThOr = author;
-		this.tItLe = title;
+		//this.AuThOr = author;
+		this.author = author;
+		//this.tItLe = title;
+		this.title = title;
 		this.CALLNO = callNo;
 		this.iD = id;
 		this.StAtE = sTaTe.AVAILABLE;
@@ -25,7 +30,8 @@ public class Book implements Serializable {
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Book: ").append(iD).append("\n")
+		//sb.append("Book: ").append(iD).append("\n")
+		sb.append("Book: ").append(id).append("\n")// name change
 		  .append("  Title:  ").append(tItLe).append("\n")
 		  .append("  Author: ").append(AuThOr).append("\n")
 		  .append("  CallNo: ").append(CALLNO).append("\n")
