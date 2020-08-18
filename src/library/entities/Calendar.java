@@ -1,3 +1,9 @@
+
+//Author: Akshay Patel
+//Reviewer: Sonal Muthukumarana
+//Mediator: Milan Vala
+
+
 package library.entities;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -13,16 +19,24 @@ public class Calendar {
 		cAlEnDaR = java.util.Calendar.getInstance();
 	}
 	
-	public static Calendar gEtInStAnCe() {
-		if (sElF == null) {
-			sElF = new Calendar();
+
+	
+	// public static Calendar gEtInStAnCe()
+	public static Calendar getInstance() {  				// Method name changed from gEtInStAnCe() to getInstance()
+		//if (sElF == null) {
+		if (self == null) {
+		    //sElF = new Calendar();
+		    self = new calendar();					// Adding 4 space. changed Calendar() to calendar()
+
 		}
-		return sElF;
+		//return sElF;
+		return self;
 	}
 	
 	public void incrementDate(int days) {
 		cAlEnDaR.add(java.util.Calendar.DATE, days);		
 	}
+
 	
 	public synchronized void SeT_DaTe(Date DaTe) {
 		try {
@@ -59,8 +73,12 @@ public class Calendar {
 	
 	public synchronized long GeT_DaYs_DiFfErEnCe(Date targetDate) {
 		
-		long Diff_Millis = gEt_DaTe().getTime() - targetDate.getTime();
-	    long Diff_Days = TimeUnit.DAYS.convert(Diff_Millis, TimeUnit.MILLISECONDS);
+
+		// long Diff_Millis = gEt_DaTe().getTime() - targetDate.getTime();
+		long diffMillis = getDate().getTime() - targetDate.getTime();
+	        // long Diff_Days = TimeUnit.DAYS.convert(Diff_Millis, TimeUnit.MILLISECONDS);		
+	        long Diff_Days = TimeUnit.DAYS.convert(diffMillis, timeUnit.MILLISECONDS);
+
 	    return Diff_Days;
 	}
 
