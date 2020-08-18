@@ -19,42 +19,47 @@ public class BorrowBookUI {
 		this.CoNtRoL = control; //CoNtRoL changed to Control
 		input = new Scanner(System.in); //InPuT  changed to input
 		state = uI_STaTe.INITIALISED; //StaTe changed to state
-		control.SeT_Ui(this); // SeT_Ui
+		control.setUI(this); // SeT_Ui to setUI
 	}
 
 	
-	private String iNpUT(String PrOmPt) {
-		System.out.print(PrOmPt);
-		return InPuT.nextLine();
+	private String Input(String prompt) { //iNpUT changed to Input //PrOmPt changed to prompt
+		System.out.print(prompt); //PrOmPt changed to prompt
+		return Input.nextLine(); //iNpUT changed to Input
 	}	
 		
 		
-	private void OuTpUt(Object ObJeCt) {
-		System.out.println(ObJeCt);
+	private void Output(Object object) { //OuTpUt changed to Output //ObJeCt changes to object
+		System.out.println(object); //ObJeCt changes to object 
 	}
 	
 			
-	public void SeT_StAtE(uI_STaTe StAtE) {
-		this.StaTe = StAtE;
+	public void SetState(UIState state) { //SeT_StAtE changed to SetState //uI_STaTe changed to UIState
+		//this.StaTe = StAtE;
+		this.state = state;
 	}
 
 	
-	public void RuN() {
-		OuTpUt("Borrow Book Use Case UI\n");
+	public void Run() { //RuN changed to Run
+		OuTpUt("Borrow Book Use Case UI\n"); //OuTpUt changed to output
 		
 		while (true) {
 			
-			switch (StaTe) {			
+			switch (state) { //StaTe changed to state			
 			
 			case CANCELLED:
-				OuTpUt("Borrowing Cancelled");
+				output("Borrowing Cancelled"); //OuTpUt changed to output
 				return;
 
-				
-			case READY:
+			/*			case READY:
 				String MEM_STR = iNpUT("Swipe member card (press <enter> to cancel): ");
 				if (MEM_STR.length() == 0) {
 					CoNtRoL.CaNcEl();
+					break;*/	
+			case READY:
+				String MEM_STR = iNpUT("Swipe member card (press <enter> to cancel): ");
+				if (MEM_STR.length() == 0) {
+					control.cancel(); //CoNtRoL changed to control //CaNcEl changed to cancel
 					break;
 				}
 				try {
@@ -68,7 +73,7 @@ public class BorrowBookUI {
 
 				
 			case RESTRICTED:
-				iNpUT("Press <any key> to cancel");
+				input("Press <any key> to cancel");//iNpUT changed to input
 				CoNtRoL.CaNcEl();
 				break;
 			
@@ -95,20 +100,20 @@ public class BorrowBookUI {
 					CoNtRoL.CaNcEl();
 					
 				} else {
-					CoNtRoL.CoMmIt_LoAnS();
-					iNpUT("Press <any key> to complete ");
+					control.commitLoans(); //CoNtRoL change to control //CoMmIt_LoAnS changed to commitLoans
+					input("Press <any key> to complete "); //iNpUT change to input
 				}
 				break;
 				
 				
 			case COMPLETED:
-				OuTpUt("Borrowing Completed");
+				output("Borrowing Completed"); //OuTpUt changed to output
 				return;
 	
 				
 			default:
-				OuTpUt("Unhandled state");
-				throw new RuntimeException("BorrowBookUI : unhandled state :" + StaTe);			
+				output("Unhandled state"); //OuTpUt change to output
+				throw new RuntimeException("BorrowBookUI : unhandled state :" + state);	//StaTe change to state		
 			}
 		}		
 	}
