@@ -15,8 +15,8 @@ public class Book implements Serializable {
 	
 	//private enum sTaTe { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
 	private enum state { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
-	private sTaTe StAtE;
-	
+	//private sTaTe StAtE;
+	private state;
 	
 	public Book(String author, String title, String callNo, int id) {
 		this.AuThOr = author;
