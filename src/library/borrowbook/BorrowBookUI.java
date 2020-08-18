@@ -25,7 +25,7 @@ public class BorrowBookUI {
 	
 	private String Input(String prompt) { //iNpUT changed to Input //PrOmPt changed to prompt
 		System.out.print(prompt); //PrOmPt changed to prompt
-		return InPuT.nextLine();
+		return Input.nextLine(); //iNpUT changed to Input
 	}	
 		
 		
