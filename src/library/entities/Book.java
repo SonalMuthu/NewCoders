@@ -6,16 +6,17 @@ import java.io.Serializable;
 public class Book implements Serializable {
 	
 
-	private String tItLe;
-	//private String AuThOr;//variable name changed
-	private String author;
-
-	private String CALLNO;
-	private int id;// variable name changed
+	// private String tItLe;
+	private String title;// variablr name changed from tItle to title
+	//private String AuThOr; 
+	private String author;//variable name changed from Author to author
+	//private String CALLNO;
+	private String callNo;//variable name changed from CALLNO to callNo
+	//private int iD;
+	private int id;// variable name changed from iD to id
 	
 	//private enum sTaTe { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
-	private enum state { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
-	//private sTaTe StAtE;
+	private enum state { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };//variable name changed from sTaTe to state
 	private state;
 	
 	public Book(String author, String title, String callNo, int id) {
@@ -23,17 +24,21 @@ public class Book implements Serializable {
 		this.author = author;
 		//this.tItLe = title;
 		this.title = title;
-		this.CALLNO = callNo;
-		this.iD = id;
-		this.StAtE = sTaTe.AVAILABLE;
+		//this.CALLNO = callNo;
+		this.callNo = callNo;
+		//this.iD = id;
+		this.id = id;
+		//this.StAtE = sTaTe.AVAILABLE;
+		this.stste = state.AVAILABLE;
 	}
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		//sb.append("Book: ").append(iD).append("\n")
-		sb.append("Book: ").append(id).append("\n")// name change
-		  .append("  Title:  ").append(tItLe).append("\n")
-		  .append("  Author: ").append(AuThOr).append("\n")
+		sb.append("Book: ").append(id).append("\n")
+		//  .append("  Title:  ").append(title).append("\n")
+	            .append("  Title:  ").append(tItLe).append("\n")
+	      // .append("  Author: ").append(AuThOr).append("\n")
 		  .append("  CallNo: ").append(CALLNO).append("\n")
 		  .append("  State:  ").append(StAtE);
 		
