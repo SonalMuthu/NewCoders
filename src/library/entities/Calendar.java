@@ -13,6 +13,7 @@ public class Calendar {
 	//private static java.util.Calendar cAlEnDaR
 	private static java.util.Calendar calendar;				//changed from cAlEnDaR to calendar
 	
+
 	
 		//cAlEnDaR = java.util.Calendar.getInstance();
 		calendar = java.util.Calendar.getInstance();			//changes from cAlEnDaR to calendar to comply with the variable name
