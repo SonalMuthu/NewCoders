@@ -5,9 +5,11 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class Book implements Serializable {
 	
-	//private String tItLe(variable name changed)
-	private String title;
-	private String AuThOr;
+
+	private String tItLe;
+	//private String AuThOr;//variable name changed
+	private String author;
+
 	private String CALLNO;
 	private int id;// variable name changed
 	
