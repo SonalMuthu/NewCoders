@@ -126,8 +126,10 @@ public class Member implements Serializable {
 	}
 
 
-	public void AdD_FiNe(double fine) {
-		FiNeS_OwInG += fine;
+	// public void AdD_FiNe(double fine) {
+	public void addFine(double fine) {					// changed method name  AdD_FiNe() to addFine()
+		// FiNeS_OwInG += fine;
+		finesOwning += fine;						// changed variable name FiNeS_OwInG to finesOwning
 	}
 	
 	public double PaY_FiNe(double AmOuNt) {
