@@ -104,10 +104,10 @@ public class Member implements Serializable {
 		//if (!cUrReNt_lOaNs.containsKey(lOaN.GeT_Id()))
 		if (!currentLoans.containsKey(loan.getId())) 			// changed cUrReNt_lOaNs, lOaN.GeT_Id() to currentLoans, Loan.getId()
 			// cUrReNt_lOaNs.put(lOaN.GeT_Id(), lOaN);
-			currentLoans.put(loan.getId(), loan);			// changed cUrReNt_lOaNs, lOaN.GeT_Id() to currentLoans, Loan.getId()
+		    currentLoans.put(loan.getId(), loan);			// changed cUrReNt_lOaNs, lOaN.GeT_Id() to currentLoans, Loan.getId()
 		
 		else 
-			throw new RuntimeException("Duplicate loan added to member");
+		    throw new RuntimeException("Duplicate loan added to member");
 				
 	}
 
@@ -136,21 +136,21 @@ public class Member implements Serializable {
 	public double payFine(double amount) {					// changed method name PaY_FiNe() to payFine()
 		// if (AmOuNt < 0) 
 		if (amount < 0) 						// changed variable name AmOuNt to amount
-			throw new RuntimeException("Member.payFine: amount must be positive");
+		    throw new RuntimeException("Member.payFine: amount must be positive");
 		
 		double change = 0;
 		// if (AmOuNt > FiNeS_OwInG) {
 		if (amount > finesOwning) {					// changed variables name AmOuNt, FiNeS_OwInG to amount, finesOwning
 			// change = AmOuNt - FiNeS_OwInG;
-			change = amount - finesOwning;				// changed variables name AmOuNt, FiNeS_OwInG to amount, finesOwning
+		    change = amount - finesOwning;				// changed variables name AmOuNt, FiNeS_OwInG to amount, finesOwning
 			// FiNeS_OwInG = 0;
-			finesOwning = 0;					// changed variable name FiNeS_OwInG to finesOwning
+		    finesOwning = 0;					// changed variable name FiNeS_OwInG to finesOwning
 		}
 		else 
 			// FiNeS_OwInG -= AmOuNt;
-			finesOwning -= amount;					// changed FiNeS_OwInG to finesOwning
+		    finesOwning -= amount;					// changed FiNeS_OwInG to finesOwning
 		
-		return change;
+		    return change;
 	}
 
 
@@ -159,10 +159,10 @@ public class Member implements Serializable {
 		// if (cUrReNt_lOaNs.containsKey(LoAn.GeT_Id())) 
 		if (currentLoans.containsKey(loan.getId())) 			// changed cUrReNt_lOaNs to currentLoans and LoAn.GeT_Id() to loan.getId()
 			// cUrReNt_lOaNs.remove(LoAn.GeT_Id());
-			currentLoans.remove(loan.getId());			// changed cUrReNt_lOaNs to currentLoans and LoAn.GeT_Id() to loan.getId() 
+		    currentLoans.remove(loan.getId());			// changed cUrReNt_lOaNs to currentLoans and LoAn.GeT_Id() to loan.getId() 
 		
 		else 
-			throw new RuntimeException("No such loan held by member");
+		    throw new RuntimeException("No such loan held by member");
 				
 	}
 
