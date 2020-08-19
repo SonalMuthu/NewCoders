@@ -71,23 +71,31 @@ public class Member implements Serializable {
 	}
 
 	
-	public int GeT_ID() {
-		return MeMbEr_Id;
+	// public int GeT_ID() {
+	public int getId() {							// changed Method name GeT_ID() to get()
+		// return MeMbEr_Id;
+		return memberId;						// changed variable name MeMbEr_Id to memberId()
 	}
 
 	
-	public List<Loan> GeT_LoAnS() {
-		return new ArrayList<Loan>(cUrReNt_lOaNs.values());
+	// public List<Loan> GeT_LoAnS() {
+	public List<Loan> getLoans()						// changed method name GeT_LoAnS() to getLoans
+		// return new ArrayList<Loan>(cUrReNt_lOaNs.values());
+		return new ArrayList<Loan>(currentLoans.values());		// changed cUrReNt_lOaNs to currentLoans
 	}
 
 	
-	public int gEt_nUmBeR_Of_CuRrEnT_LoAnS() {
-		return cUrReNt_lOaNs.size();
+	// public int gEt_nUmBeR_Of_CuRrEnT_LoAnS() {
+	public int getNumberOfCurrentLoans() {					// changed gEt_nUmBeR_Of_CuRrEnT_LoAnS() to getNumberOfCurrentLoans()
+		// return cUrReNt_lOaNs.size();
+		return currentLoans.size();					// changed cUrReNt_lOaNs to currentLoans
 	}
 
 	
-	public double FiNeS_OwEd() {
-		return FiNeS_OwInG;
+	// public double FiNeS_OwEd() {
+	public double finesOwned() {						// changed Method name FiNeS_OwEd()  to finesOwned 
+		// return FiNeS_OwInG;
+		return finesOwning;						// changed FiNeS_OwInG to finesOwning
 	}
 
 	
