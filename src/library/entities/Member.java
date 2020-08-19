@@ -78,8 +78,10 @@ public class Member implements Serializable {
 	}
 
 	
-	public List<Loan> GeT_LoAnS() {
-		return new ArrayList<Loan>(cUrReNt_lOaNs.values());
+	// public List<Loan> GeT_LoAnS() {
+	public List<Loan> getLoans()						// changed method name GeT_LoAnS() to getLoans
+		// return new ArrayList<Loan>(cUrReNt_lOaNs.values());
+		return new ArrayList<Loan>(currentLoans.values());		// changed cUrReNt_lOaNs to currentLoans
 	}
 
 	
