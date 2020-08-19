@@ -85,13 +85,17 @@ public class Member implements Serializable {
 	}
 
 	
-	public int gEt_nUmBeR_Of_CuRrEnT_LoAnS() {
-		return cUrReNt_lOaNs.size();
+	// public int gEt_nUmBeR_Of_CuRrEnT_LoAnS() {
+	public int getNumberOfCurrentLoans() {					// changed gEt_nUmBeR_Of_CuRrEnT_LoAnS() to getNumberOfCurrentLoans()
+		// return cUrReNt_lOaNs.size();
+		return currentLoans.size();					// changed cUrReNt_lOaNs to currentLoans
 	}
 
 	
-	public double FiNeS_OwEd() {
-		return FiNeS_OwInG;
+	// public double FiNeS_OwEd() {
+	public double finesOwned() {						// changed Method name FiNeS_OwEd()  to finesOwned 
+		// return FiNeS_OwInG;
+		return finesOwning;						// changed FiNeS_OwInG to finesOwning
 	}
 
 	
