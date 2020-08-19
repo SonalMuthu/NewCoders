@@ -49,16 +49,23 @@ public class Member implements Serializable {
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Member:  ").append(MeMbEr_Id).append("\n")
-		  .append("  Name:  ").append(LaSt_NaMe).append(", ").append(FiRsT_NaMe).append("\n")
-		  .append("  Email: ").append(EmAiL_AdDrEsS).append("\n")
-		  .append("  Phone: ").append(PhOnE_NuMbEr)
+		// sb.append("Member:  ").append(MeMbEr_Id).append("\n")
+		sb.append("Member:  ").append(memberd).append("\n")		// changed variable name MeMbEr_Id to memberId
+		  //.append("  Name:  ").append(LaSt_NaMe).append(", ").append(FiRsT_NaMe).append("\n")
+		  .append("  Name:  ").append(lastName).append(", ").append(firstName).append("\n") 	// changed variable name LaSt_NaMe to lastName
+		 // .append("  Email: ").append(EmAiL_AdDrEsS).append("\n")
+		  .append("  Email: ").append(emailadress).append("\n")		// changed variable name EmAiL_AdDrEsS to emailAdress	
+		 // .append("  Phone: ").append(PhOnE_NuMbEr)
+		  .append("  Phone: ").append(phoneNumber)			// changed variable name PhOnE_NuMbEr to phoneNumber
 		  .append("\n")
-		  .append(String.format("  Fines Owed :  $%.2f", FiNeS_OwInG))
+		 // .append(String.format("  Fines Owed :  $%.2f", FiNeS_OwInG))
+		  .append(String.format("  Fines Owed :  $%.2f", finesOwning))	// changed FiNeS_OwInG to finesOwning
 		  .append("\n");
 		
-		for (Loan LoAn : cUrReNt_lOaNs.values()) {
-			sb.append(LoAn).append("\n");
+		// for (Loan LoAn : cUrReNt_lOaNs.values()) {			// changed LoAn to loan and cUrReNt_lOaNs to currentLoans
+		for (Loan loan : currentLoans.values()) {
+			// sb.append(LoAn).append("\n");
+			sb.append(loan).append("\n");				// changed LoAn to loan
 		}		  
 		return sb.toString();
 	}
