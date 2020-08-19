@@ -112,13 +112,17 @@ public class Member implements Serializable {
 	}
 
 	
-	public String GeT_LaSt_NaMe() {
-		return LaSt_NaMe;
+	// public String GeT_LaSt_NaMe() {
+	public String getLastName() {						// chnaged method name GeT_LaSt_NaMe() to getLastName() 
+		// return LaSt_NaMe;
+		return lastName;						// changed variable name LaSt_NaMe to lastName
 	}
 
 	
-	public String GeT_FiRsT_NaMe() {
-		return FiRsT_NaMe;
+	// public String GeT_FiRsT_NaMe() {
+	public String getFirstName() {						// chnaged function name GeT_FiRsT_NaMe to getFirstName
+		// return FiRsT_NaMe;
+		return firstName;						// changed variable name FiRsT_NaMe to firstName
 	}
 
 
