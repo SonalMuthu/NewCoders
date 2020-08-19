@@ -154,9 +154,12 @@ public class Member implements Serializable {
 	}
 
 
-	public void dIsChArGeLoAn(Loan LoAn) {
-		if (cUrReNt_lOaNs.containsKey(LoAn.GeT_Id())) 
-			cUrReNt_lOaNs.remove(LoAn.GeT_Id());
+	// public void dIsChArGeLoAn(Loan LoAn) {
+	public void dischargeLoan(Loan loan) {					// changed parameter LoAn to loan and method name dIsChArGeLoAn() to dischargeLoan
+		// if (cUrReNt_lOaNs.containsKey(LoAn.GeT_Id())) 
+		if (currentLoans.containsKey(loan.getId())) 			// changed cUrReNt_lOaNs to currentLoans and LoAn.GeT_Id() to loan.getId()
+			// cUrReNt_lOaNs.remove(LoAn.GeT_Id());
+			currentLoans.remove(loan.getId());			// changed cUrReNt_lOaNs to currentLoans and LoAn.GeT_Id() to loan.getId() 
 		
 		else 
 			throw new RuntimeException("No such loan held by member");
