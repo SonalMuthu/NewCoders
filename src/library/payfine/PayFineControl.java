@@ -46,11 +46,14 @@ public class PayFineControl {							// class names start with an uppercase, chan
 	}
 
 
-	public void CaRd_sWiPeD(int MeMbEr_Id) {
-		if (!StAtE.equals(cOnTrOl_sTaTe.READY)) 
+	// public void CaRd_sWiPeD(int MeMbEr_Id) {
+	public void cardSwiped(int memberId) {					// changed method name CaRd_sWiPeD to cardSwiped and MeMbEr_Id to memebrId
+		// if (!StAtE.equals(cOnTrOl_sTaTe.READY)) 
+		if (!state.equals(ControlState.READY)) 				// changed StAtE to state and cOnTrOl_sTaTe to ControlState
 			throw new RuntimeException("PayFineControl: cannot call cardSwiped except in READY state");
 			
-		MeMbEr = LiBrArY.gEt_MeMbEr(MeMbEr_Id);
+		// MeMbEr = LiBrArY.gEt_MeMbEr(MeMbEr_Id);
+		member = library.getMember(memberId);				// changed LiBrArY to library and gEt_MeMbEr to getMember
 		
 		if (MeMbEr == null) {
 			Ui.DiSplAY("Invalid Member Id");
