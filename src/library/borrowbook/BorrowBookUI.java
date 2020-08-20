@@ -120,7 +120,7 @@ public class BorrowBookUI {
 
 
 	public void Display(Object object) { // DiSpLaY changed to Display
-		OuTpUt(object);		
+		OuTpUt(object);	//OuTpUt changed to output	
 	}
 
 
