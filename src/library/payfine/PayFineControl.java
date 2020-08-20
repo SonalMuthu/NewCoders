@@ -55,14 +55,19 @@ public class PayFineControl {							// class names start with an uppercase, chan
 		// MeMbEr = LiBrArY.gEt_MeMbEr(MeMbEr_Id);
 		member = library.getMember(memberId);				// changed LiBrArY to library and gEt_MeMbEr to getMember
 		
-		if (MeMbEr == null) {
-			Ui.DiSplAY("Invalid Member Id");
+		// if (MeMbEr == null) {
+		if (member == null) {						// changed MeMbEr to member
+			// Ui.DiSplAY("Invalid Member Id");
+			ui.display("Invalid Member Id");			// changed DiSplAY to display and Ui to ui
 			return;
 		}
-		Ui.DiSplAY(MeMbEr.toString());
-		Ui.SeT_StAtE(PayFineUI.uI_sTaTe.PAYING);
-		StAtE = cOnTrOl_sTaTe.PAYING;
-	}
+		// Ui.DiSplAY(MeMbEr.toString());
+		ui.display(member.toString());					// changed DiSplAY to display and changed MeMbEr to member
+		// Ui.SeT_StAtE(PayFineUI.uI_sTaTe.PAYING);
+		ui.setState(PayFineUI.uiState.PAYING);				// changed SeT_StAtE to setState and uI_sTaTe to uiState
+		// StAtE = cOnTrOl_sTaTe.PAYING;
+		state = ControlState.PAYING;					// changed cOnTrOl_sTaTe to ControlState and StAtE to state
+	}	
 	
 	
 	public void CaNcEl() {
