@@ -84,26 +84,33 @@ public class Book implements Serializable {
 
 
 	public void ReTuRn(boolean DaMaGeD) {
-		if (StAtE.equals(sTaTe.ON_LOAN)) 
-			if (DaMaGeD) 
-				StAtE = sTaTe.DAMAGED;
+		if (StAtE.equals(sTaTe.ON_LOAN)) {		//curly brackets "{ " use for if else statement
 			
-			else 
+			if (DaMaGeD) {
+				StAtE = sTaTe.DAMAGED;
+			}
+			
+			else {
 				StAtE = sTaTe.AVAILABLE;
+			}
+		}
 			
 		
-		else 
+		else {
 			throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", StAtE));
+		}
 				
 	}
 
 	
 	public void RePaIr() {
-		if (StAtE.equals(sTaTe.DAMAGED)) 
+		if (StAtE.equals(sTaTe.DAMAGED)) {
 			StAtE = sTaTe.AVAILABLE;
+		}
 		
-		else 
+		else {
 			throw new RuntimeException(String.format("Book: cannot repair while book is in state: %s", StAtE));
+		}
 		
 	}
 
