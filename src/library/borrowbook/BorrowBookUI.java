@@ -119,7 +119,7 @@ public class BorrowBookUI {
 	}
 
 
-	public void DiSpLaY(Object object) {
+	public void Display(Object object) { // DiSpLaY changed to Display
 		OuTpUt(object);		
 	}
 
