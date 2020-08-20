@@ -16,8 +16,10 @@ public class PayFineControl {							// class names start with an uppercase, chan
 	// private cOnTrOl_sTaTe StAtE;
 	private ControlState state;						// changed class name cOnTrOl_sTaTe to ControlState and variable name StAtE to state
 	
-	private Library LiBrArY;
-	private Member MeMbEr;
+	// private Library LiBrArY;
+	private Library library;						// changed variable name LiBrArY to library
+	// private Member MeMbEr;
+	private Member member;							// changed variable name MeMbEr to member
 
 
 	public pAY_fINE_cONTROL() {
