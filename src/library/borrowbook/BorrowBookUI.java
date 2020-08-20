@@ -79,8 +79,8 @@ public class BorrowBookUI {
 			
 				
 			case SCANNING:
-				String BOOKINPUT = iNpUT("Scan Book (<enter> completes): "); //BoOk_StRiNg_InPuT change to BOOKINPUT
-				if (BOOKINPUT.length() == 0) {
+				String bookinput = iNpUT("Scan Book (<enter> completes): "); //BoOk_StRiNg_InPuT change to bookinput
+				if (bookinput.length() == 0) {
 					CoNtRoL.CoMpLeTe();
 					break;
 				}
@@ -95,8 +95,8 @@ public class BorrowBookUI {
 					
 				
 			case FINALISING:
-				String AnS = iNpUT("Commit loans? (Y/N): ");
-				if (AnS.toUpperCase().equals("N")) {
+				String answer = input("Commit loans? (Y/N): "); //iNpUT change to input answer
+				if (answer.toUpperCase().equals("N")) {
 					control.cancel();//CoNtRoL change to control //CaNcEl changes to cancel
 					
 				} else {
