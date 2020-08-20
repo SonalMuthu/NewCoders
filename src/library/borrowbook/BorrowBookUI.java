@@ -74,7 +74,7 @@ public class BorrowBookUI {
 				
 			case RESTRICTED:
 				input("Press <any key> to cancel");//iNpUT changed to input
-				CoNtRoL.CaNcEl();
+				control.cancel(); // CoNtRoL change control // CaNcEl change to cancel
 				break;
 			
 				
