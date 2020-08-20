@@ -39,14 +39,17 @@ public class Book implements Serializable {
 		//  .append("  Title:  ").append(title).append("\n")
 	            .append("  Title:  ").append(tItLe).append("\n")
 	      // .append("  Author: ").append(AuThOr).append("\n")
-		  .append("  CallNo: ").append(CALLNO).append("\n")
-		  .append("  State:  ").append(StAtE);
+		  .append("  Author: ").append(author).append("\n")
+		  //.append("  CallNo: ").append(CALLNO).append("\n")
+		  .append("  CallNo: ").append(callNo).append("\n")
+		  //.append("  State:  ").append(StAtE);
+		   .append("  State:  ").append(state);
 		
 		return sb.toString();
 	}
 
-	public Integer gEtId() {
-		return iD;
+	public Integer getId() {    // public Integer gEtId()- method name change from gEtId to getId()
+		return id;// variable name chang from iD to id
 	}
 
 	public String gEtTiTlE() {
