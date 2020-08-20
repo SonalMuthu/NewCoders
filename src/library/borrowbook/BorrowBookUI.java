@@ -79,14 +79,14 @@ public class BorrowBookUI {
 			
 				
 			case SCANNING:
-				String bookinput = iNpUT("Scan Book (<enter> completes): "); //BoOk_StRiNg_InPuT change to bookinput
+				String bookinput = input("Scan Book (<enter> completes): "); //BoOk_StRiNg_InPuT change to bookinput //iNpUT change to input
 				if (bookinput.length() == 0) {
 					control.complete(); //CoNtRoL change to control // CoMpLeTe change to complete
 					break;
 				}
 				try {
 					int bid = Integer.valueOf(BoOk_StRiNg_InPuT).intValue(); //BiD change to bid
-					CoNtRoL.ScAnNeD(BiD);
+					control.scanned(bid); //CoNtRoL change to control //ScAnNeD change to scanned
 					
 				} catch (NumberFormatException e) {
 					output("Invalid Book Id"); //OuTpUt change to output
