@@ -85,7 +85,7 @@ public class BorrowBookUI {
 					break;
 				}
 				try {
-					int BiD = Integer.valueOf(BoOk_StRiNg_InPuT).intValue();
+					int bid = Integer.valueOf(BoOk_StRiNg_InPuT).intValue(); //BiD change to bid
 					CoNtRoL.ScAnNeD(BiD);
 					
 				} catch (NumberFormatException e) {
