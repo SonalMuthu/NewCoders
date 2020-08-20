@@ -89,7 +89,7 @@ public class BorrowBookUI {
 					CoNtRoL.ScAnNeD(BiD);
 					
 				} catch (NumberFormatException e) {
-					OuTpUt("Invalid Book Id");
+					output("Invalid Book Id"); //OuTpUt change to output
 				} 
 				break;
 					
