@@ -2,7 +2,12 @@ package library.payfine;
 import library.entities.Library;
 import library.entities.Member;
 
-public class pAY_fINE_cONTROL {
+//Author: Akshay Patel
+//Reviewer: Sonal Muthukumarana
+//Mediator: Milan Vala
+
+//public class pAY_fINE_cONTROL 
+public class PayFineControl {							// class names start with an uppercase, changed pAY_fINE_cONTROL to PayFineControl
 	
 	private PayFineUI Ui;
 	private enum cOnTrOl_sTaTe { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
