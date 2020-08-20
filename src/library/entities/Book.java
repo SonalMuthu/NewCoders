@@ -52,8 +52,8 @@ public class Book implements Serializable {
 		return id;// variable name chang from iD to id
 	}
 
-	public String gEtTiTlE() {
-		return tItLe;
+	public String getTitle() {   // public Integer gEtTiTlE()- method name change from gEtTiTlE() to getTitle()
+		return tItLe; // variable name chang from tItLe to title
 	}
 
 
