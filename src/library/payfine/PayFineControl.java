@@ -13,7 +13,8 @@ public class PayFineControl {							// class names start with an uppercase, chan
 	private PayFineUI ui;							// changed variable name UI to ui
 	// private enum cOnTrOl_sTaTe { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
 	private enum ControlState { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };	// changed cOnTrOl_sTaTe to ControlState
-	private cOnTrOl_sTaTe StAtE;
+	// private cOnTrOl_sTaTe StAtE;
+	private ControlState state;						// changed class name cOnTrOl_sTaTe to ControlState and variable name StAtE to state
 	
 	private Library LiBrArY;
 	private Member MeMbEr;
