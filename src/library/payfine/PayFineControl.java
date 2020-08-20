@@ -22,9 +22,12 @@ public class PayFineControl {							// class names start with an uppercase, chan
 	private Member member;							// changed variable name MeMbEr to member
 
 
-	public pAY_fINE_cONTROL() {
-		this.LiBrArY = Library.GeTiNsTaNcE();
-		StAtE = cOnTrOl_sTaTe.INITIALISED;
+	// public pAY_fINE_cONTROL() {
+	public payFineControl() {						// changed function name pAY_fINE_cONTROL() to payFineControl
+		// this.LiBrArY = Library.GeTiNsTaNcE();
+		this.library = Library.getInstance();				// changed variable LiBrArY to library and method GeTiNsTaNcE() to getInstance()
+		// StAtE = cOnTrOl_sTaTe.INITIALISED;
+		state = ControlState.INITIALISED;				// varible StAtE to state and class cOnTrOl_sTaTe to ControlState
 	}
 	
 	
