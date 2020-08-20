@@ -58,8 +58,7 @@ public class Book implements Serializable {
 
 
 	
-	public boolean iS_AvAiLaBlE() {
-		return StAtE == sTaTe.AVAILABLE;
+	public boolean iS_AvAiLaBlE() { 	// public Integer iS_AvAiLaBlE()- method name change from iS_AvAiLaBlE() to isAvalable()
 	}
 
 	
