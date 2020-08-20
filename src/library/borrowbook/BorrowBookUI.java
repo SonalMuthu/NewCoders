@@ -79,8 +79,8 @@ public class BorrowBookUI {
 			
 				
 			case SCANNING:
-				String BoOk_StRiNg_InPuT = iNpUT("Scan Book (<enter> completes): ");
-				if (BoOk_StRiNg_InPuT.length() == 0) {
+				String BOOKINPUT = iNpUT("Scan Book (<enter> completes): "); //BoOk_StRiNg_InPuT change to BOOKINPUT
+				if (BOOKINPUT.length() == 0) {
 					CoNtRoL.CoMpLeTe();
 					break;
 				}
