@@ -31,8 +31,10 @@ public class PayFineUI {
 	}
 	
 	
-	public void SeT_StAtE(uI_sTaTe state) {
-		this.StAtE = state;
+	// public void SeT_StAtE(uI_sTaTe state) {
+	public void setState(UIState state) {					// chaend method name SeT_StAtE to setState and uI_sTaTet to UIState
+		// this.StAtE = state;
+		this.state = state;						// variable name StAtE to state
 	}
 
 
