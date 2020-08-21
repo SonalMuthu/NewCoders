@@ -19,11 +19,15 @@ public class PayFineUI {
 	private UIState state;							// changed variable name StAtE to state and uI_sTaTe to UIState
 
 	
-	public PayFineUI(pAY_fINE_cONTROL control) {
-		this.CoNtRoL = control;
+	// public PayFineUI(pAY_fINE_cONTROL control) {
+	public PayFineUI(payFineControl control) {				// changed argument pAY_fINE_cONTROL to payFineControl
+		// this.CoNtRoL = control;
+		this.control = control;
 		input = new Scanner(System.in);
-		StAtE = uI_sTaTe.INITIALISED;
-		control.SeT_uI(this);
+		// StAtE = uI_sTaTe.INITIALISED;				// changed class name uI_sTaTe to UIState
+		state = UIState.INITIALISED;
+		// control.SeT_uI(this);
+		control.setUI(this);						// chaned method name SeT_uI to setUI
 	}
 	
 	
