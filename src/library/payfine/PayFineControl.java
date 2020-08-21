@@ -79,8 +79,10 @@ public class PayFineControl {							// class names start with an uppercase, chan
 	}
 
 
-	public double PaY_FiNe(double AmOuNt) {
-		if (!StAtE.equals(cOnTrOl_sTaTe.PAYING)) 
+	// public double PaY_FiNe(double AmOuNt) {
+	public double payFine(double amount) {					// changed method name PaY_FiNe to payFine and variable AmOuNt to amount
+		// if (!StAtE.equals(cOnTrOl_sTaTe.PAYING)) 
+		if (!state.equals(ControlState.PAYING)) 			// changed variable StAtE to state and class name cOnTrOl_sTaTe to ControlState
 			throw new RuntimeException("PayFineControl: cannot call payFine except in PAYING state");
 			
 		double ChAnGe = MeMbEr.PaY_FiNe(AmOuNt);
