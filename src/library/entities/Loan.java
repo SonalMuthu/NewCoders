@@ -7,7 +7,6 @@ import java.util.Date;
 public class Loan implements Serializable {
 	
 	public static enum lOaN_sTaTe { CURRENT, OVER_DUE, DISCHARGED };
-	
 	private int LoAn_Id;
 	private Book BoOk;
 	private Member MeMbEr;
@@ -24,7 +23,7 @@ public class Loan implements Serializable {
 	}
 
 	
-	public void cHeCk_OvEr_DuE() {
+	public void CheckOverDue() {		// public void cHeCk_OvEr_DuE()-metthod name change:cHeCk_OvEr_DuE() to CheckOverDue
 		if (StAtE == lOaN_sTaTe.CURRENT &&
 			Calendar.gEtInStAnCe().gEt_DaTe().after(DaTe)) 
 			this.StAtE = lOaN_sTaTe.OVER_DUE;			
