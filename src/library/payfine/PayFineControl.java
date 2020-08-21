@@ -85,14 +85,21 @@ public class PayFineControl {							// class names start with an uppercase, chan
 		if (!state.equals(ControlState.PAYING)) 			// changed variable StAtE to state and class name cOnTrOl_sTaTe to ControlState
 			throw new RuntimeException("PayFineControl: cannot call payFine except in PAYING state");
 			
-		double ChAnGe = MeMbEr.PaY_FiNe(AmOuNt);
-		if (ChAnGe > 0) 
-			Ui.DiSplAY(String.format("Change: $%.2f", ChAnGe));
+		// double ChAnGe = MeMbEr.PaY_FiNe(AmOuNt);
+		double change = member.payFine(amount);				// chnaged varible name ChAnGe to change and parameter AmOuNt to amount
+		// if (ChAnGe > 0) 
+		if (change > 0) 						// changed variable name ChAnGe to change
+			// Ui.DiSplAY(String.format("Change: $%.2f", ChAnGe));
+			ui.disply(String.format("Change: $%.2f", change));	// changed variable name ChAnGe to change and Ui to ui
 		
-		Ui.DiSplAY(MeMbEr.toString());
-		Ui.SeT_StAtE(PayFineUI.uI_sTaTe.COMPLETED);
-		StAtE = cOnTrOl_sTaTe.COMPLETED;
-		return ChAnGe;
+		// Ui.DiSplAY(MeMbEr.toString());
+		ui.display(member.toString());					// changed method name DiSplAY to display and variable Ui to ui
+		// Ui.SeT_StAtE(PayFineUI.uI_sTaTe.COMPLETED);
+		ui.setState(payFineUI.uiState.COMPLETED);				// changed function name SeT_StAtE to setState and uI_sTaTe to uiState
+		// StAtE = cOnTrOl_sTaTe.COMPLETED;
+		state = ControlState.COMPLETED;						// changed StAtE to state and cOnTrOl_sTaTe to ControlState
+		// return ChAnGe;
+		return Change;								// changed variable name ChAnGe to change
 	}
 	
 
