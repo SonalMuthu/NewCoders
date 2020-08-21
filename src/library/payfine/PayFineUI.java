@@ -48,9 +48,12 @@ public class PayFineUI {
 			switch (state) {					// changed StAtE to state
 			
 			case READY:
-				String Mem_Str = input("Swipe member card (press <enter> to cancel): ");
-				if (Mem_Str.length() == 0) {
-					CoNtRoL.CaNcEl();
+				// String Mem_Str = input("Swipe member card (press <enter> to cancel): ");
+				String memStr = input("Swipe member card (press <enter> to cancel): ");	// changed string name Mem_Str to memStr
+				// if (Mem_Str.length() == 0) {
+				if (memStr.length() == 0) {			// changed string name Mem_Str to memStr
+					// CoNtRoL.CaNcEl();
+					control.cancel();			// changed CoNtRoL to control and method changed CaNcEl() to cancel()
 					break;
 				}
 				try {
