@@ -70,9 +70,12 @@ public class PayFineControl {							// class names start with an uppercase, chan
 	}	
 	
 	
-	public void CaNcEl() {
-		Ui.SeT_StAtE(PayFineUI.uI_sTaTe.CANCELLED);
-		StAtE = cOnTrOl_sTaTe.CANCELLED;
+	// public void CaNcEl() {
+	public void cancel() {							// changed method CaNcEl() to cancel()
+		// Ui.SeT_StAtE(PayFineUI.uI_sTaTe.CANCELLED);
+		ui.setState(PayFineUI.uiState.CANCELLED);			// changed Ui to ui and SeT_StAtE to setState
+		// StAtE = cOnTrOl_sTaTe.CANCELLED;
+		state = ControlState.CANCELLED;					// changed StAtE to state and cOnTrOl_sTaTe to ControlState
 	}
 
 
