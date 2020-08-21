@@ -38,12 +38,14 @@ public class PayFineUI {
 	}
 
 
-	public void RuN() {
+	// public void RuN() {
+	public void run() {							// changed class name RuN() to run()
 		output("Pay Fine Use Case UI\n");
 		
 		while (true) {
 			
-			switch (StAtE) {
+			// switch (StAtE) {
+			switch (state) {					// changed StAtE to state
 			
 			case READY:
 				String Mem_Str = input("Swipe member card (press <enter> to cancel): ");
