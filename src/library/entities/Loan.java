@@ -31,8 +31,8 @@ public class Loan implements Serializable {
 	}
 
 	
-	public boolean Is_OvEr_DuE() {
-		return StAtE == lOaN_sTaTe.OVER_DUE;
+	public boolean IsOverDue() {		//public boolean Is_OvEr_DuE()- method name change:Is_OvEr_DuE() to IsOverDue
+		return state == LoanState.OverDue;		//return StAtE == lOaN_sTaTe.OVER_DUE;
 	}
 
 	
