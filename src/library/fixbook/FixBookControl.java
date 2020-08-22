@@ -52,10 +52,13 @@ public class FixBookConrol {							// changed class name fIX_bOOK_cONTROL to Fix
 		if (!state.equals(ControlState.READY)) 				// changed varible name StAtE to state and class name CoNtRoL_StAtE to ControlState
 			throw new RuntimeException("FixBookControl: cannot call bookScanned except in READY state");
 			
-		CuRrEnT_BoOk = LiBrArY.gEt_BoOk(BoOkId);
+		// CuRrEnT_BoOk = LiBrArY.gEt_BoOk(BoOkId);
+		currentBook = library.getBook(bookId);				// changed CuRrEnT_BoOk to currentBook and parameter name BoOkId to bookId 
 		
-		if (CuRrEnT_BoOk == null) {
-			Ui.dIsPlAy("Invalid bookId");
+		//if (CuRrEnT_BoOk == null) {
+		if (currentBook == null) {					// changed CuRrEnT_BoOk to currentBook
+			// Ui.dIsPlAy("Invalid bookId");
+			ui.display("Invalid bookId");				// changed variable name Ui to ui and function dIsPlAy() to display()
 			return;
 		}
 		if (!CuRrEnT_BoOk.iS_DaMaGeD()) {
