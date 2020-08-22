@@ -121,7 +121,8 @@ public class PayFineUI {
 	}	
 			
 
-	public void DiSplAY(Object object) {
+	// public void DiSplAY(Object object) {
+	public void display(Object object) {					// changee method name DiSplAY() to display()
 		output(object);
 	}
 
