@@ -9,9 +9,12 @@ import library.entities.Library;
 // public class fIX_bOOK_cONTROL {
 public class FixBookConrol {							// changed class name fIX_bOOK_cONTROL to FixBookControl
 	
-	private FixBookUI Ui;
-	private enum CoNtRoL_StAtE { INITIALISED, READY, FIXING };
-	private CoNtRoL_StAtE StAtE;
+	// private FixBookUI Ui;
+	private FixBookUI ui;							// changed variable name Ui to ui
+	// private enum CoNtRoL_StAtE { INITIALISED, READY, FIXING };
+	private enum ControlState { INITIALISED, READY, FIXING };		// changed enum CoNtRoL_StAtE to ControlState
+	// private CoNtRoL_StAtE StAtE;
+	private COntrolState state;						// changed CoNtRoL_StAtE to ControlState and StAtE to state
 	
 	private Library LiBrArY;
 	private Book CuRrEnT_BoOk;
