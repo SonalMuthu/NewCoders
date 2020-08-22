@@ -22,9 +22,12 @@ public class FixBookConrol {							// changed class name fIX_bOOK_cONTROL to Fix
 	private Book currentBook;						// changed CuRrEnT_BoOk to currentBook
 
 
-	public fIX_bOOK_cONTROL() {
-		this.LiBrArY = Library.GeTiNsTaNcE();
-		StAtE = CoNtRoL_StAtE.INITIALISED;
+	// public fIX_bOOK_cONTROL() {
+	public FixBookControl() {						// update method name fIX_bOOK_cONTROL() to FixBookControl
+		// this.LiBrArY = Library.GeTiNsTaNcE();
+		this.library = Library.getInstance();				// changed LiBrArY to library and method name GeTiNsTaNcE() to getInstance()
+		// StAtE = CoNtRoL_StAtE.INITIALISED;
+		state = ControlState.INITIALISED;				// changed variable name StAtE to state and class name CoNtRoL_StAtE to ControlState
 	}
 	
 	
