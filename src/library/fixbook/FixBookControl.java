@@ -46,8 +46,10 @@ public class FixBookConrol {							// changed class name fIX_bOOK_cONTROL to Fix
 	}	
 
 
-	public void BoOk_ScAnNeD(int BoOkId) {
-		if (!StAtE.equals(CoNtRoL_StAtE.READY)) 
+	// public void BoOk_ScAnNeD(int BoOkId) {
+	public void bookSanned(int bookId) {					// changed function name BoOk_ScAnNeD to bookScanned and varible name BoOkId to bookId
+		// if (!StAtE.equals(CoNtRoL_StAtE.READY))
+		if (!state.equals(ControlState.READY)) 				// changed varible name StAtE to state and class name CoNtRoL_StAtE to ControlState
 			throw new RuntimeException("FixBookControl: cannot call bookScanned except in READY state");
 			
 		CuRrEnT_BoOk = LiBrArY.gEt_BoOk(BoOkId);
