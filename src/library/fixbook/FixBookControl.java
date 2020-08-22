@@ -16,8 +16,10 @@ public class FixBookConrol {							// changed class name fIX_bOOK_cONTROL to Fix
 	// private CoNtRoL_StAtE StAtE;
 	private COntrolState state;						// changed CoNtRoL_StAtE to ControlState and StAtE to state
 	
-	private Library LiBrArY;
-	private Book CuRrEnT_BoOk;
+	// private Library LiBrArY;
+	private Library library;						// changed LiBrArY to library
+	// private Book CuRrEnT_BoOk;
+	private Book currentBook;						// changed CuRrEnT_BoOk to currentBook
 
 
 	public fIX_bOOK_cONTROL() {
