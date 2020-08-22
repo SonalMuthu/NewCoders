@@ -2,7 +2,12 @@ package library.fixbook;
 import library.entities.Book;
 import library.entities.Library;
 
-public class fIX_bOOK_cONTROL {
+//Author: Akshay Patel
+//Reviewer: Sonal Muthukumarana
+//Mediator: Milan Vala
+
+// public class fIX_bOOK_cONTROL {
+public class FixBookConrol {							// changed class name fIX_bOOK_cONTROL to FixBookControl
 	
 	private FixBookUI Ui;
 	private enum CoNtRoL_StAtE { INITIALISED, READY, FIXING };
