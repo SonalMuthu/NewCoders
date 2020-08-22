@@ -37,10 +37,13 @@ public class FixBookConrol {							// changed class name fIX_bOOK_cONTROL to Fix
 		if (!state.equals(ControlState.INITIALISED)) 			// changed CoNtRoL_StAtEt to ControlState and variable name StAtE to state
 			throw new RuntimeException("FixBookControl: cannot call setUI except in INITIALISED state");
 			
-		this.Ui = ui;
-		ui.SeT_StAtE(FixBookUI.uI_sTaTe.READY);
-		StAtE = CoNtRoL_StAtE.READY;		
-	}
+		// this.Ui = ui;
+		this.ui = ui;							// changed Ui to ui 
+		// ui.SeT_StAtE(FixBookUI.uI_sTaTe.READY);
+		ui.setState(FixBookUI.uiState.READY);				// changed method name SeT_StAtE to setState and uI_sTaTe to uiState
+		// StAtE = CoNtRoL_StAtE.READY;	
+		state = ControlState.READY;					// changed CoNtRoL_StAtE to ControlState and variable name to state
+	}	
 
 
 	public void BoOk_ScAnNeD(int BoOkId) {
