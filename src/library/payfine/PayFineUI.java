@@ -57,8 +57,10 @@ public class PayFineUI {
 					break;
 				}
 				try {
-					int Member_ID = Integer.valueOf(Mem_Str).intValue();
-					CoNtRoL.CaRd_sWiPeD(Member_ID);
+					// int Member_ID = Integer.valueOf(Mem_Str).intValue();
+					int memberId = Integer.valueOf(memStr).intValue();	// changed variable name Member_ID to memberId
+					// CoNtRoL.CaRd_sWiPeD(Member_ID);
+					control.cardSwiped(memberId);		// changed CoNtRoL to control and variable name Member_ID to memberId
 				}
 				catch (NumberFormatException e) {
 					output("Invalid memberId");
