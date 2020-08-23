@@ -75,7 +75,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 			uI.DiSpLaY("Book cannot be borrowed");
 			return;
 		}
-		pEnDiNg_LiSt.add(bOoK);
+		pendingList.add(bOoK); //pEnDiNg_LiSt change to pendingList
 		for (Book B : pEnDiNg_LiSt) 
 			uI.DiSpLaY(B.toString());
 		
