@@ -86,7 +86,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	}
 	
 	
-	public void CoMpLeTe() {
+	public void Complete() { //CoMpLeTe change to Complete
 		if (pEnDiNg_LiSt.size() == 0) 
 			CaNcEl();
 		
@@ -102,7 +102,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	}
 
 
-	public void CoMmIt_LoAnS() {
+	public void CommitLoans() { //CoMmIt_LoAnS change to CommitLoans
 		if (!sTaTe.equals(CONTROL_STATE.FINALISING)) 
 			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");
 			
@@ -119,7 +119,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	}
 
 	
-	public void CaNcEl() {
+	public void Cancel() { //CaNcEl change to Cancel
 		uI.SeT_StAtE(BorrowBookUI.uI_STaTe.CANCELLED);
 		sTaTe = CONTROL_STATE.CANCELLED;
 	}
