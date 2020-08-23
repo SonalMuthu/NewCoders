@@ -31,7 +31,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	
 
 	public void setUI(BorrowBookUI Ui) { //SeT_Ui setUI
-		if (!sTaTe.equals(CONTROL_STATE.INITIALISED)) //sTaTe change state
+		if (!state.equals(controlState.initialised)) //sTaTe change state
 			throw new RuntimeException("BorrowBookControl: cannot call setUI except in INITIALISED state");
 			
 		this.uI = Ui;
@@ -41,7 +41,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 
 		
 	public void swiped(int memberId) { //SwIpEd change to swiped //mEmBeR_Id change to memberId
-		if (!sTaTe.equals(CONTROL_STATE.READY)) 
+		if (!state.equals(controlState.ready)) //sTaTe change to state
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
 			
 		mEmBeR = lIbRaRy.gEt_MeMbEr(mEmBeR_Id);
