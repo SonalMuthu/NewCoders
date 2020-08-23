@@ -120,8 +120,8 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 
 	
 	public void Cancel() { //CaNcEl change to Cancel
-		uI.SeT_StAtE(BorrowBookUI.uI_STaTe.CANCELLED);
-		sTaTe = CONTROL_STATE.CANCELLED;
+		uI.setState(BorrowBookUI.uI_STaTe.CANCELLED); //SeT_StAtE change to setState
+		state = controlState.CANCELLED; //sTaTe change to state //CONTROL_STATE change to  controlState
 	}
 	
 	
