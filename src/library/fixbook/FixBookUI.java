@@ -101,9 +101,11 @@ public class FixBookUI {
 	}
 
 	
-	private String iNpUt(String prompt) {
+	// private String iNpUt(String prompt) {
+	private String input(String prompt) {					// changed string name iNpUt to input
 		System.out.print(prompt);
-		return InPuT.nextLine();
+		// return InPuT.nextLine();
+		return InPuT.nextLine();					// changed string name iNpUt to input
 	}	
 		
 		
