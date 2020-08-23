@@ -22,7 +22,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	private Book book; //bOoK change to book
 	
 	
-	public bORROW_bOOK_cONTROL() {
+	public borrowBookControl() { //bORROW_bOOK_cONTROL change to borrowBookControl
 		this.lIbRaRy = Library.GeTiNsTaNcE();
 		sTaTe = CONTROL_STATE.INITIALISED;
 	}
