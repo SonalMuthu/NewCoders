@@ -49,10 +49,10 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 			uI.display("Invalid memberId"); //DiSpLaY change to display
 			return;
 		}
-		if (lIbRaRy.cAn_MeMbEr_BoRrOw(mEmBeR)) {
-			pEnDiNg_LiSt = new ArrayList<>();
-			uI.SeT_StAtE(BorrowBookUI.uI_STaTe.SCANNING);
-			sTaTe = CONTROL_STATE.SCANNING; 
+		if (library.memberBorrow(member)) { //lIbRaRy change to library //cAn_MeMbEr_BoRrOw memberBorrow //mEmBeR change to member
+			pendingList = new ArrayList<>(); //pEnDiNg_LiSt change to pendingList
+			uI.setState(BorrowBookUI.uI_STaTe.SCANNING); //SeT_StAtE change to setState
+			sTaTe = controlState.SCANNING; //CONTROL_STATE change to controlState
 		}
 		else {
 			uI.DiSpLaY("Member cannot borrow at this time");
