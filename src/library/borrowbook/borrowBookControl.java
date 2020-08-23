@@ -7,7 +7,8 @@ import library.entities.Library;
 import library.entities.Loan;
 import library.entities.Member;
 
-public class bORROW_bOOK_cONTROL {
+//public class bORROW_bOOK_cONTROL
+public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookControl
 	
 	private BorrowBookUI uI;
 	
