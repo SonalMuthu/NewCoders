@@ -61,13 +61,18 @@ public class FixBookConrol {							// changed class name fIX_bOOK_cONTROL to Fix
 			ui.display("Invalid bookId");				// changed variable name Ui to ui and function dIsPlAy() to display()
 			return;
 		}
-		if (!CuRrEnT_BoOk.iS_DaMaGeD()) {
-			Ui.dIsPlAy("Book has not been damaged");
+		// if (!CuRrEnT_BoOk.iS_DaMaGeD()) {
+		if (!currentBook.isDamaged()) {					// changed variable name CuRrEnT_BoOk to currentBook and iS_DaMaGeD() to isDamaged
+			// Ui.dIsPlAy("Book has not been damaged");
+			ui.display("Book has not been damaged");		// changed variable name Ui to ui and method name dIsPlAy() to display
 			return;
 		}
-		Ui.dIsPlAy(CuRrEnT_BoOk.toString());
-		Ui.SeT_StAtE(FixBookUI.uI_sTaTe.FIXING);
-		StAtE = CoNtRoL_StAtE.FIXING;		
+		// Ui.dIsPlAy(CuRrEnT_BoOk.toString());
+		ui.display(currentBook.toString());				// changed Ui to ui, dIsPlAy to display and CuRrEnT_BoOk to currentBook
+		// Ui.SeT_StAtE(FixBookUI.uI_sTaTe.FIXING);
+		ui.serState(FixBookUI.uiState.FIXING);				// changed SeT_StAtE to setState and uI_sTaTe to uiState
+		// StAtE = CoNtRoL_StAtE.FIXING;	
+		state = ControlState.FIXING;					// changed CoNtRoL_StAtE to ControlState and StAtE to state
 	}
 
 
