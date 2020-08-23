@@ -91,7 +91,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 			CaNcEl();
 		
 		else {
-			uI.DiSpLaY("\nFinal Borrowing List");
+			uI.display("\nFinal Borrowing List"); //DiSpLaY change to display
 			for (Book bOoK : pEnDiNg_LiSt) 
 				uI.DiSpLaY(bOoK.toString());
 			
