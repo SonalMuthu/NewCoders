@@ -115,8 +115,10 @@ public class FixBookUI {
 	}
 	
 
-	public void dIsPlAy(Object object) {
-		OuTpUt(object);
+	// public void dIsPlAy(Object object) {
+	public void display(Object object) {					// changed function name dIsPlAy() to display()
+		// OuTpUt(object);
+		output(object);							// changed OuTpUt to output
 	}
 	
 	
