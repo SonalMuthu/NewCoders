@@ -109,7 +109,8 @@ public class FixBookUI {
 	}	
 		
 		
-	private void OuTpUt(Object object) {
+	// private void OuTpUt(Object object) {
+	private void output(Object object) {					// changed method name OuTpUt to output
 		System.out.println(object);
 	}
 	
