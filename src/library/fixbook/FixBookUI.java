@@ -80,11 +80,13 @@ public class FixBookUI {
 					// FiX = true;
 					fix = true;					// changed boolean FiX to fix
 				
-				CoNtRoL.FiX_BoOk(FiX);
+				// CoNtRoL.FiX_BoOk(FiX);
+				control.fixBook(fix);					// changed FiX_BoOk to fixBook and changed parameter FiX to fix
 				break;
 								
 			case COMPLETED:
-				OuTpUt("Fixing process complete");
+				// OuTpUt("Fixing process complete");
+				output("Fixing process complete");			// changed OuTpUt to output
 				return;
 			
 			default:
