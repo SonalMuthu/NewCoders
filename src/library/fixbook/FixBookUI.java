@@ -90,8 +90,10 @@ public class FixBookUI {
 				return;
 			
 			default:
-				OuTpUt("Unhandled state");
-				throw new RuntimeException("FixBookUI : unhandled state :" + StAtE);			
+				// OuTpUt("Unhandled state");	
+				output("Unhandled state");				// changed OuTpUt to output
+				// throw new RuntimeException("FixBookUI : unhandled state :" + StAtE);
+				throw new RuntimeException("FixBookUI : unhandled state :" + state);	// changed variable name StAtE to state		
 			
 			}		
 		}
