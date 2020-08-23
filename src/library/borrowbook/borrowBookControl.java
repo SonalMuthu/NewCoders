@@ -55,8 +55,8 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 			sTaTe = controlState.SCANNING; //CONTROL_STATE change to controlState
 		}
 		else {
-			uI.DiSpLaY("Member cannot borrow at this time");
-			uI.SeT_StAtE(BorrowBookUI.uI_STaTe.RESTRICTED); 
+			uI.display("Member cannot borrow at this time"); //DiSpLaY change to display
+			uI.setState(BorrowBookUI.uI_STaTe.RESTRICTED);  //SeT_StAtE change to setState
 		}
 	}
 	
