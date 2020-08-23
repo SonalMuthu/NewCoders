@@ -38,8 +38,10 @@ public class FixBookUI {
 	}
 
 	
-	public void RuN() {
-		OuTpUt("Fix Book Use Case UI\n");
+	// public void RuN() {
+	public void run() {								// changed method name RuN() to run()
+		// OuTpUt("Fix Book Use Case UI\n");
+		output("Fix Book Use Case UI\n");					// changed OuTpUt to output()
 		
 		while (true) {
 			
