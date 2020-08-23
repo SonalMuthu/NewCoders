@@ -66,7 +66,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 		if (!state.equals(controlState.SCANNING)) //sTaTe change to state 
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
 			
-		book = lIbRaRy.gEt_BoOk(bOoKiD); //bOoK change to book
+		book = library.getbook(bookId); //bOoK change to book //bOoKiD change to bookId //lIbRaRy change to library //gEt_BoOk change to getbook
 		if (book == null) {
 			uI.display("Invalid bookId"); //DiSpLaY change to display
 			return;
