@@ -55,8 +55,8 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 			sTaTe = controlState.SCANNING; //CONTROL_STATE change to controlState
 		}
 		else {
-			uI.DiSpLaY("Member cannot borrow at this time");
-			uI.SeT_StAtE(BorrowBookUI.uI_STaTe.RESTRICTED); 
+			uI.display("Member cannot borrow at this time"); //DiSpLaY change to display
+			uI.setState(BorrowBookUI.uI_STaTe.RESTRICTED);  //SeT_StAtE change to setState
 		}
 	}
 	
@@ -66,12 +66,12 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 		if (!state.equals(controlState.SCANNING)) //sTaTe change to state 
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
 			
-		bOoK = lIbRaRy.gEt_BoOk(bOoKiD);
-		if (bOoK == null) {
-			uI.DiSpLaY("Invalid bookId");
+		book = library.getbook(bookId); //bOoK change to book //bOoKiD change to bookId //lIbRaRy change to library //gEt_BoOk change to getbook
+		if (book == null) {
+			uI.display("Invalid bookId"); //DiSpLaY change to display
 			return;
 		}
-		if (!bOoK.iS_AvAiLaBlE()) {
+		if (!bOoK.isavailabe()) { //iS_AvAiLaBlE change to isavailabe
 			uI.DiSpLaY("Book cannot be borrowed");
 			return;
 		}
@@ -91,7 +91,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 			CaNcEl();
 		
 		else {
-			uI.DiSpLaY("\nFinal Borrowing List");
+			uI.display("\nFinal Borrowing List"); //DiSpLaY change to display
 			for (Book bOoK : pEnDiNg_LiSt) 
 				uI.DiSpLaY(bOoK.toString());
 			
@@ -120,8 +120,8 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 
 	
 	public void Cancel() { //CaNcEl change to Cancel
-		uI.SeT_StAtE(BorrowBookUI.uI_STaTe.CANCELLED);
-		sTaTe = CONTROL_STATE.CANCELLED;
+		uI.setState(BorrowBookUI.uI_STaTe.CANCELLED); //SeT_StAtE change to setState
+		state = controlState.CANCELLED; //sTaTe change to state //CONTROL_STATE change to  controlState
 	}
 	
 	
