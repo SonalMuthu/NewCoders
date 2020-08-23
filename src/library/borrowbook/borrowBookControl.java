@@ -19,7 +19,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	
 	private List<Book> pEnDiNg_LiSt;
 	private List<Loan> cOmPlEtEd_LiSt;
-	private Book bOoK; //bOoK
+	private Book book; //bOoK change to book
 	
 	
 	public bORROW_bOOK_cONTROL() {
