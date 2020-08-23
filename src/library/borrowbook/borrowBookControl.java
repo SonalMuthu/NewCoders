@@ -24,7 +24,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	
 	public borrowBookControl() { //bORROW_bOOK_cONTROL change to borrowBookControl
 		this.library = Library.getInstance(); //lIbRaRy change to library // GeTiNsTaNcE change to getInstance
-		sTaTe = CONTROL_STATE.INITIALISED;
+		state = controlState.initialised; //sTaTe change to state //CONTROL_STATE change to controlState //INITIALISED change to initialised
 	}
 	
 
