@@ -82,12 +82,17 @@ public class FixBookConrol {							// changed class name fIX_bOOK_cONTROL to Fix
 		if (!state.equals(ControlState.FIXING))				// changed StAtE to state and class name  CoNtRoL_StAtE to ControlState
 			throw new RuntimeException("FixBookControl: cannot call fixBook except in FIXING state");
 			
-		if (mUsT_FiX) 
-			LiBrArY.RePaIr_BoOk(CuRrEnT_BoOk);
+		// if (mUsT_FiX) 
+		if (mustFix) 							// changed boolean mUsT_FiX to mustFix
+			// LiBrArY.RePaIr_BoOk(CuRrEnT_BoOk);
+			library.repairBook(currentBook);	// changed LiBrArY to library, function RePaIr_BoOk to repiarBook and CuRrEnT_BoOk to currentBook
 		
-		CuRrEnT_BoOk = null;
-		Ui.SeT_StAtE(FixBookUI.uI_sTaTe.READY);
-		StAtE = CoNtRoL_StAtE.READY;		
+		// CuRrEnT_BoOk = null;
+		currentBook = null;						// changed CuRrEnT_BoOk to currentBook		
+		// Ui.SeT_StAtE(FixBookUI.uI_sTaTe.READY);
+		ui.setState(FixBookUI.uiState.READY);		// changed SeT_StAtE to setState, uI_sTaTe to uiState and Ui to ui
+		// StAtE = CoNtRoL_StAtE.READY;	
+		state = ControlState.READY;					// changed variable name StAtE to state and CoNtRoL_StAtE to ControlState
 	}
 
 	
