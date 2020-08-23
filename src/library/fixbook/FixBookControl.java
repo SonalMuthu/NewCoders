@@ -96,11 +96,14 @@ public class FixBookConrol {							// changed class name fIX_bOOK_cONTROL to Fix
 	}
 
 	
-	public void SCannING_COMplete() {
-		if (!StAtE.equals(CoNtRoL_StAtE.READY)) 
+	// public void SCannING_COMplete() {
+	public void scanningComplete() {					// changed method name SCannING_COMplete to ScanningComplete
+		// if (!StAtE.equals(CoNtRoL_StAtE.READY)) 
+		if (!state.equals(ControlState.READY)) 				// changed variable name StAtE to state and class name CoNtRoL_StAtE to COntrolState
 			throw new RuntimeException("FixBookControl: cannot call scanningComplete except in READY state");
 			
-		Ui.SeT_StAtE(FixBookUI.uI_sTaTe.COMPLETED);		
+		// Ui.SeT_StAtE(FixBookUI.uI_sTaTe.COMPLETED);
+		ui.setState(FixBookUI.uiState.COMPLETED);			// changed class name SeT_StAtE to setState and variable name Ui to ui	
 	}
 
 }
