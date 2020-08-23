@@ -61,9 +61,9 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	}
 	
 	
-	public void ScAnNeD(int bOoKiD) {
-		bOoK = null;
-		if (!sTaTe.equals(CONTROL_STATE.SCANNING)) 
+	public void scanned(int bOoKiD) { //ScAnNeD change to scanned
+		book = null; //bOoK change to book
+		if (!state.equals(controlState.SCANNING)) //sTaTe change to state 
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
 			
 		bOoK = lIbRaRy.gEt_BoOk(bOoKiD);
