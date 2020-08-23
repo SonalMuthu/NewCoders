@@ -57,8 +57,8 @@ public class BorrowBookUI {
 					CoNtRoL.CaNcEl();
 					break;*/	
 			case READY:
-				String MEM_STR = input("Swipe member card (press <enter> to cancel): ");// iNpUT change into input
-				if (MEM_STR.length() == 0) {
+				String member = input("Swipe member card (press <enter> to cancel): ");// iNpUT change into input //MEM_STR change to member
+				if (member.length() == 0) {
 					control.cancel(); //CoNtRoL changed to control //CaNcEl changed to cancel
 					break;
 				}
