@@ -12,6 +12,8 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	
 	private BorrowBookUI uI;
 	
+	/*private Library lIbRaRy;
+	private Member mEmBeR;*/
 	private Library lIbRaRy;
 	private Member mEmBeR;
 	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
@@ -38,7 +40,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	}
 
 		
-	public void SwIpEd(int mEmBeR_Id) {
+	public void swiped(int memberId) { //SwIpEd change to swiped //mEmBeR_Id change to memberId
 		if (!sTaTe.equals(CONTROL_STATE.READY)) 
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
 			
