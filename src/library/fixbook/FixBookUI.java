@@ -58,11 +58,14 @@ public class FixBookUI {
 				
 				else {
 					try {
-						int BoOk_Id = Integer.valueOf(BoOk_EnTrY_StRiNg).intValue();
-						CoNtRoL.BoOk_ScAnNeD(BoOk_Id);
+						// int BoOk_Id = Integer.valueOf(BoOk_EnTrY_StRiNg).intValue();
+						int bookId = Integer.valueOf(bookEntryString).intValue();	// changed integer BoOk_Id to bookId and BoOk_EnTrY_StRiNg to to bookEntryString
+						// CoNtRoL.BoOk_ScAnNeD(BoOk_Id);
+						control.bookScanned(bookId);				// changed CoNtRoL to control and BoOk_ScAnNeD to bookScanned and Book_Id to bookId
 					}
 					catch (NumberFormatException e) {
-						OuTpUt("Invalid bookId");
+						// OuTpUt("Invalid bookId");
+						output("Invalid bookId");				// changed OuTpUt to output
 					}
 				}
 				break;	
