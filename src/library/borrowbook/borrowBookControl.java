@@ -15,11 +15,11 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	private Library lIbRaRy;
 	private Member mEmBeR;
 	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
-	private CONTROL_STATE sTaTe;
+	private CONTROL_STATE state; //sTaTe change to state
 	
 	private List<Book> pEnDiNg_LiSt;
 	private List<Loan> cOmPlEtEd_LiSt;
-	private Book bOoK;
+	private Book bOoK; //bOoK
 	
 	
 	public bORROW_bOOK_cONTROL() {
