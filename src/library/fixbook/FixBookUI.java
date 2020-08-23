@@ -1,14 +1,21 @@
 package library.fixbook;
 import java.util.Scanner;
 
+//Author: Akshay Patel
+//Reviewer: Milan Vala
+//Mediator: Sonal Muthukumarana
 
 public class FixBookUI {
 
-	public static enum uI_sTaTe { INITIALISED, READY, FIXING, COMPLETED };
+	// public static enum uI_sTaTe { INITIALISED, READY, FIXING, COMPLETED };
+	public static enum UIState { INITIALISED, READY, FIXING, COMPLETED };		// changed class name uI_sTaTe to UIState
 
-	private fIX_bOOK_cONTROL CoNtRoL;
-	private Scanner InPuT;
-	private uI_sTaTe StAtE;
+	//private fIX_bOOK_cONTROL CoNtRoL;
+	private FixBookControl control;							// changed class name fIX_bOOK_cONTROL to FixBookControl
+	// private Scanner InPuT;
+	private Scanner input;								// changed variable name InPuT to input
+	// private uI_sTaTe StAtE;
+	private UIState state;								// changed variable name StAtE to state
 
 	
 	public FixBookUI(fIX_bOOK_cONTROL CoNtRoL) {
