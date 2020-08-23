@@ -17,7 +17,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
 	private CONTROL_STATE state; //sTaTe change to state
 	
-	private List<Book> pEnDiNg_LiSt;
+	private List<Book> booksPending; //pEnDiNg_LiSt change to booksPending
 	private List<Loan> cOmPlEtEd_LiSt;
 	private Book book; //bOoK change to book
 	
