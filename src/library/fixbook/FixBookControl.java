@@ -76,8 +76,10 @@ public class FixBookConrol {							// changed class name fIX_bOOK_cONTROL to Fix
 	}
 
 
-	public void FiX_BoOk(boolean mUsT_FiX) {
-		if (!StAtE.equals(CoNtRoL_StAtE.FIXING)) 
+	// public void FiX_BoOk(boolean mUsT_FiX) {
+	public void fixBook(boolean mesyFix) {					// changed method name FiX_BoOk to fixBook and boolean mUsT_FiX to mustFix
+		// if (!StAtE.equals(CoNtRoL_StAtE.FIXING)) 
+		if (!state.equals(ControlState.FIXING))				// changed StAtE to state and class name  CoNtRoL_StAtE to ControlState
 			throw new RuntimeException("FixBookControl: cannot call fixBook except in FIXING state");
 			
 		if (mUsT_FiX) 
