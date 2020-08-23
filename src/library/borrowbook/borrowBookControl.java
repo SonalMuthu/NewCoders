@@ -7,28 +7,31 @@ import library.entities.Library;
 import library.entities.Loan;
 import library.entities.Member;
 
-public class bORROW_bOOK_cONTROL {
+//public class bORROW_bOOK_cONTROL
+public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookControl
 	
 	private BorrowBookUI uI;
 	
+	/*private Library lIbRaRy;
+	private Member mEmBeR;*/
 	private Library lIbRaRy;
 	private Member mEmBeR;
 	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
-	private CONTROL_STATE sTaTe;
+	private CONTROL_STATE state; //sTaTe change to state
 	
-	private List<Book> pEnDiNg_LiSt;
-	private List<Loan> cOmPlEtEd_LiSt;
-	private Book bOoK;
+	private List<Book> booksPending; //pEnDiNg_LiSt change to booksPending
+	private List<Loan> completedList; //cOmPlEtEd_LiSt change to completedList
+	private Book book; //bOoK change to book
 	
 	
-	public bORROW_bOOK_cONTROL() {
-		this.lIbRaRy = Library.GeTiNsTaNcE();
-		sTaTe = CONTROL_STATE.INITIALISED;
+	public borrowBookControl() { //bORROW_bOOK_cONTROL change to borrowBookControl
+		this.library = Library.getInstance(); //lIbRaRy change to library // GeTiNsTaNcE change to getInstance
+		state = controlState.initialised; //sTaTe change to state //CONTROL_STATE change to controlState //INITIALISED change to initialised
 	}
 	
 
-	public void SeT_Ui(BorrowBookUI Ui) {
-		if (!sTaTe.equals(CONTROL_STATE.INITIALISED)) 
+	public void setUI(BorrowBookUI Ui) { //SeT_Ui setUI
+		if (!state.equals(controlState.initialised)) //sTaTe change state
 			throw new RuntimeException("BorrowBookControl: cannot call setUI except in INITIALISED state");
 			
 		this.uI = Ui;
@@ -37,19 +40,19 @@ public class bORROW_bOOK_cONTROL {
 	}
 
 		
-	public void SwIpEd(int mEmBeR_Id) {
-		if (!sTaTe.equals(CONTROL_STATE.READY)) 
+	public void swiped(int memberId) { //SwIpEd change to swiped //mEmBeR_Id change to memberId
+		if (!state.equals(controlState.ready)) //sTaTe change to state
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
 			
-		mEmBeR = lIbRaRy.gEt_MeMbEr(mEmBeR_Id);
-		if (mEmBeR == null) {
-			uI.DiSpLaY("Invalid memberId");
+		member = library.getmember(mEmBeR_Id); //lIbRaRy change to library //gEt_MeMbEr change to getmember
+		if (member == null) { //mEmBeR change to member
+			uI.display("Invalid memberId"); //DiSpLaY change to display
 			return;
 		}
-		if (lIbRaRy.cAn_MeMbEr_BoRrOw(mEmBeR)) {
-			pEnDiNg_LiSt = new ArrayList<>();
-			uI.SeT_StAtE(BorrowBookUI.uI_STaTe.SCANNING);
-			sTaTe = CONTROL_STATE.SCANNING; 
+		if (library.memberBorrow(member)) { //lIbRaRy change to library //cAn_MeMbEr_BoRrOw memberBorrow //mEmBeR change to member
+			pendingList = new ArrayList<>(); //pEnDiNg_LiSt change to pendingList
+			uI.setState(BorrowBookUI.uI_STaTe.SCANNING); //SeT_StAtE change to setState
+			sTaTe = controlState.SCANNING; //CONTROL_STATE change to controlState
 		}
 		else {
 			uI.DiSpLaY("Member cannot borrow at this time");
@@ -58,9 +61,9 @@ public class bORROW_bOOK_cONTROL {
 	}
 	
 	
-	public void ScAnNeD(int bOoKiD) {
-		bOoK = null;
-		if (!sTaTe.equals(CONTROL_STATE.SCANNING)) 
+	public void scanned(int bOoKiD) { //ScAnNeD change to scanned
+		book = null; //bOoK change to book
+		if (!state.equals(controlState.SCANNING)) //sTaTe change to state 
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
 			
 		bOoK = lIbRaRy.gEt_BoOk(bOoKiD);
@@ -83,7 +86,7 @@ public class bORROW_bOOK_cONTROL {
 	}
 	
 	
-	public void CoMpLeTe() {
+	public void Complete() { //CoMpLeTe change to Complete
 		if (pEnDiNg_LiSt.size() == 0) 
 			CaNcEl();
 		
@@ -99,7 +102,7 @@ public class bORROW_bOOK_cONTROL {
 	}
 
 
-	public void CoMmIt_LoAnS() {
+	public void CommitLoans() { //CoMmIt_LoAnS change to CommitLoans
 		if (!sTaTe.equals(CONTROL_STATE.FINALISING)) 
 			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");
 			
@@ -116,7 +119,7 @@ public class bORROW_bOOK_cONTROL {
 	}
 
 	
-	public void CaNcEl() {
+	public void Cancel() { //CaNcEl change to Cancel
 		uI.SeT_StAtE(BorrowBookUI.uI_STaTe.CANCELLED);
 		sTaTe = CONTROL_STATE.CANCELLED;
 	}

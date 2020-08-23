@@ -57,47 +57,47 @@ public class BorrowBookUI {
 					CoNtRoL.CaNcEl();
 					break;*/	
 			case READY:
-				String MEM_STR = iNpUT("Swipe member card (press <enter> to cancel): ");
-				if (MEM_STR.length() == 0) {
+				String member = input("Swipe member card (press <enter> to cancel): ");// iNpUT change into input //MEM_STR change to member
+				if (member.length() == 0) {
 					control.cancel(); //CoNtRoL changed to control //CaNcEl changed to cancel
 					break;
 				}
 				try {
-					int MeMbEr_Id = Integer.valueOf(MEM_STR).intValue();
-					CoNtRoL.SwIpEd(MeMbEr_Id);
+					int memberId = Integer.valueOf(MEM_STR).intValue(); //MeMbEr_Id change to memberId
+					control.swiped(memberId); //CoNtRoL change to control //SwIpEd change to swiped
 				}
 				catch (NumberFormatException e) {
-					OuTpUt("Invalid Member Id");
+					output("Invalid Member Id"); //OuTpUt chaged to output
 				}
 				break;
 
 				
 			case RESTRICTED:
 				input("Press <any key> to cancel");//iNpUT changed to input
-				CoNtRoL.CaNcEl();
+				control.cancel(); // CoNtRoL change control // CaNcEl change to cancel
 				break;
 			
 				
 			case SCANNING:
-				String BoOk_StRiNg_InPuT = iNpUT("Scan Book (<enter> completes): ");
-				if (BoOk_StRiNg_InPuT.length() == 0) {
-					CoNtRoL.CoMpLeTe();
+				String bookinput = input("Scan Book (<enter> completes): "); //BoOk_StRiNg_InPuT change to bookinput //iNpUT change to input
+				if (bookinput.length() == 0) {
+					control.complete(); //CoNtRoL change to control // CoMpLeTe change to complete
 					break;
 				}
 				try {
-					int BiD = Integer.valueOf(BoOk_StRiNg_InPuT).intValue();
-					CoNtRoL.ScAnNeD(BiD);
+					int bid = Integer.valueOf(BoOk_StRiNg_InPuT).intValue(); //BiD change to bid
+					control.scanned(bid); //CoNtRoL change to control //ScAnNeD change to scanned
 					
 				} catch (NumberFormatException e) {
-					OuTpUt("Invalid Book Id");
+					output("Invalid Book Id"); //OuTpUt change to output
 				} 
 				break;
 					
 				
 			case FINALISING:
-				String AnS = iNpUT("Commit loans? (Y/N): ");
-				if (AnS.toUpperCase().equals("N")) {
-					CoNtRoL.CaNcEl();
+				String answer = input("Commit loans? (Y/N): "); //iNpUT change to input answer
+				if (answer.toUpperCase().equals("N")) {
+					control.cancel();//CoNtRoL change to control //CaNcEl changes to cancel
 					
 				} else {
 					control.commitLoans(); //CoNtRoL change to control //CoMmIt_LoAnS changed to commitLoans
@@ -119,8 +119,8 @@ public class BorrowBookUI {
 	}
 
 
-	public void DiSpLaY(Object object) {
-		OuTpUt(object);		
+	public void Display(Object object) { // DiSpLaY changed to Display
+		output(object);	//OuTpUt changed to output	
 	}
 
 
