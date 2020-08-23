@@ -18,7 +18,7 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 	private CONTROL_STATE state; //sTaTe change to state
 	
 	private List<Book> booksPending; //pEnDiNg_LiSt change to booksPending
-	private List<Loan> cOmPlEtEd_LiSt;
+	private List<Loan> completedList; //cOmPlEtEd_LiSt change to completedList
 	private Book book; //bOoK change to book
 	
 	
