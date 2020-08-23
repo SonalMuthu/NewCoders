@@ -75,11 +75,11 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 			uI.DiSpLaY("Book cannot be borrowed");
 			return;
 		}
-		pendingList.add(bOoK); //pEnDiNg_LiSt change to pendingList
-		for (Book B : pEnDiNg_LiSt) 
-			uI.DiSpLaY(B.toString());
+		pendingList.add(book); //pEnDiNg_LiSt change to pendingList //bOoK change to book
+		for (Book B : pendingList) //pEnDiNg_LiSt change to pendingList
+			uI.display(B.toString()); //DiSpLaY change to display
 		
-		if (lIbRaRy.gEt_NuMbEr_Of_LoAnS_ReMaInInG_FoR_MeMbEr(mEmBeR) - pEnDiNg_LiSt.size() == 0) {
+		if (library.gEt_NuMbEr_Of_LoAnS_ReMaInInG_FoR_MeMbEr(mEmBeR) - pEnDiNg_LiSt.size() == 0) { //lIbRaRy change to library
 			uI.DiSpLaY("Loan limit reached");
 			CoMpLeTe();
 		}
