@@ -75,8 +75,10 @@ public class FixBookUI {
 				String and = input("Fix Book? (Y/N) : ");		// changed string name AnS to ans and iNpUt to input
 				// boolean FiX = false;
 				boolean fix = false;					// changed boolean FiX to fix
-				if (AnS.toUpperCase().equals("Y")) 
-					FiX = true;
+				// if (AnS.toUpperCase().equals("Y")) 
+				if (ans.toUpperCase().equals("Y")) 			// changed string name AnS to ans
+					// FiX = true;
+					fix = true;					// changed boolean FiX to fix
 				
 				CoNtRoL.FiX_BoOk(FiX);
 				break;
