@@ -44,9 +44,9 @@ public class borrowBookControl { // bORROW_bOOK_cONTROL change to borrowBookCont
 		if (!state.equals(controlState.ready)) //sTaTe change to state
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
 			
-		mEmBeR = lIbRaRy.gEt_MeMbEr(mEmBeR_Id);
-		if (mEmBeR == null) {
-			uI.DiSpLaY("Invalid memberId");
+		member = library.getmember(mEmBeR_Id); //lIbRaRy change to library //gEt_MeMbEr change to getmember
+		if (member == null) { //mEmBeR change to member
+			uI.display("Invalid memberId"); //DiSpLaY change to display
 			return;
 		}
 		if (lIbRaRy.cAn_MeMbEr_BoRrOw(mEmBeR)) {
