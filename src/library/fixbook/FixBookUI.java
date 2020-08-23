@@ -31,8 +31,10 @@ public class FixBookUI {
 	}
 
 
-	public void SeT_StAtE(uI_sTaTe state) {
-		this.StAtE = state;
+	// public void SeT_StAtE(uI_sTaTe state) {
+	public void setState(UIState state) {						// changed method name SeT_StAtE to setState and uI_sTaTe to UIState
+		// this.StAtE = state;
+		this.state = state;							// changed StAtE to state
 	}
 
 	
