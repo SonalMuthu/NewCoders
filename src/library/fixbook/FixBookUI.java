@@ -18,11 +18,16 @@ public class FixBookUI {
 	private UIState state;								// changed variable name StAtE to state
 
 	
-	public FixBookUI(fIX_bOOK_cONTROL CoNtRoL) {
-		this.CoNtRoL = CoNtRoL;
-		InPuT = new Scanner(System.in);
-		StAtE = uI_sTaTe.INITIALISED;
-		CoNtRoL.SeT_Ui(this);
+	// public FixBookUI(fIX_bOOK_cONTROL CoNtRoL) {
+	public FixBookUI(FixBookControl control) {					// changed class name fIX_bOOK_cONTROL to FixBookControl
+		// this.CoNtRoL = CoNtRoL;
+		this.control = control;							// changed varaible name CoNtRoL to control
+		// InPuT = new Scanner(System.in);
+		input = new Scanner(System.in);						// changed InPuT to input
+		//StAtE = uI_sTaTe.INITIALISED;
+		state = UIState.INITIALISED;						// changed uI_sTaTe to UIState 
+		// CoNtRoL.SeT_Ui(this);
+		control.setUI(this);							// changed mehtod name SeT_Ui to setUI
 	}
 
 
