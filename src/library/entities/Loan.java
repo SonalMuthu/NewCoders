@@ -6,13 +6,19 @@ import java.util.Date;
 @SuppressWarnings("serial")
 public class Loan implements Serializable {
 	
-	public static enum lOaN_sTaTe { CURRENT, OVER_DUE, DISCHARGED };
-	
-	private int LoAn_Id;
-	private Book BoOk;
-	private Member MeMbEr;
-	private Date DaTe;
-	private lOaN_sTaTe StAtE;
+	//public static enum lOaN_sTaTe { CURRENT, OVER_DUE, DISCHARGED };
+	public static enum loanState { CURRENT, OVER_DUE, DISCHARGED };
+	//private int LoAn_Id;
+	private int loanId;
+	//private Book BoOk;
+	private Book book;
+	//private Member MeMbEr;
+	private Member member;
+	//private Date DaTe;
+	private Date date;
+	//private lOaN_sTaTe StAtE;
+	private loanState state;
+
 
 	
 	public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
@@ -24,7 +30,7 @@ public class Loan implements Serializable {
 	}
 
 	
-	public void cHeCk_OvEr_DuE() {
+	public void CheckOverDue() {		// public void cHeCk_OvEr_DuE()-metthod name change:cHeCk_OvEr_DuE() to CheckOverDue
 		if (StAtE == lOaN_sTaTe.CURRENT &&
 			Calendar.gEtInStAnCe().gEt_DaTe().after(DaTe)) 
 			this.StAtE = lOaN_sTaTe.OVER_DUE;			
@@ -32,8 +38,8 @@ public class Loan implements Serializable {
 	}
 
 	
-	public boolean Is_OvEr_DuE() {
-		return StAtE == lOaN_sTaTe.OVER_DUE;
+	public boolean IsOverDue() {		//public boolean Is_OvEr_DuE()- method name change:Is_OvEr_DuE() to IsOverDue
+		return state == LoanState.OverDue;		//return StAtE == lOaN_sTaTe.OVER_DUE;
 	}
 
 	

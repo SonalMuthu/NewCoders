@@ -4,14 +4,16 @@ import java.util.Scanner;
 
 public class ReturnBookUI {
 
+
 	public static enum UiState { INITIALISED, READY, INSPECTING, COMPLETED }; // uI_sTaTe to UiState
 
 	private ReturnBookControl Control; //private rETURN_bOOK_cONTROL CoNtRoL;
 	private Scanner Input; //private Scanner iNpUt;
 	private UiState State; //uI_sTaTe StATe
 
+
 	
-	public ReturnBookUI(rETURN_bOOK_cONTROL cOnTrOL) {
+	public ReturnBookUI(ReturnBookControl Control) {	
 		this.CoNtRoL = cOnTrOL;
 		iNpUt = new Scanner(System.in);
 		StATe = uI_sTaTe.INITIALISED;
