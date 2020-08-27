@@ -14,76 +14,76 @@ public class ReturnBookUI {
 
 	
 	public ReturnBookUI(ReturnBookControl Control) {	
-		this.CoNtRoL = cOnTrOL;
-		iNpUt = new Scanner(System.in);
-		StATe = uI_sTaTe.INITIALISED;
-		cOnTrOL.sEt_uI(this);
+		this.control = control; //this.CoNtRoL = cOnTrOL;
+		input = new Scanner(System.in); //iNpUt = new Scanner(System.in);
+		state = uiState.INITIALISED; //StATe = uI_sTaTe.INITIALISED;
+		control.setUi(this); //cOnTrOL.sEt_uI(this);
 	}
 
 
-	public void RuN() {		
-		oUtPuT("Return Book Use Case UI\n");
+	public void rut() { //public void RuN() {		
+		output("Return Book Use Case UI\n"); //oUtPuT("Return Book Use Case UI\n");
 		
 		while (true) {
 			
-			switch (StATe) {
+			switch (state) { //switch (StATe) {
 			
 			case INITIALISED:
 				break;
 				
 			case READY:
-				String BoOk_InPuT_StRiNg = iNpUt("Scan Book (<enter> completes): ");
-				if (BoOk_InPuT_StRiNg.length() == 0) 
-					CoNtRoL.sCaNnInG_cOmPlEtE();
+				String bookInputString = input("Scan Book (<enter> completes): "); //String BoOk_InPuT_StRiNg = iNpUt("Scan Book (<enter> completes): ");
+				if (bookInputString.length() == 0) //if (BoOk_InPuT_StRiNg.length() == 0) 
+					control.scanningComplete(); //CoNtRoL.sCaNnInG_cOmPlEtE();
 				
 				else {
 					try {
-						int Book_Id = Integer.valueOf(BoOk_InPuT_StRiNg).intValue();
-						CoNtRoL.bOoK_sCaNnEd(Book_Id);
+						int bookID = Integer.valueOf(bookInputString).intValue(); //int Book_Id = Integer.valueOf(BoOk_InPuT_StRiNg).intValue();
+						contronBookScanned(bookID); //CoNtRoL.bOoK_sCaNnEd(Book_Id);
 					}
 					catch (NumberFormatException e) {
-						oUtPuT("Invalid bookId");
+						output("Invalid bookId"); //oUtPuT("Invalid bookId");
 					}					
 				}
 				break;				
 				
 			case INSPECTING:
-				String AnS = iNpUt("Is book damaged? (Y/N): ");
-				boolean Is_DAmAgEd = false;
-				if (AnS.toUpperCase().equals("Y")) 					
-					Is_DAmAgEd = true;
-				
-				CoNtRoL.dIsChArGe_lOaN(Is_DAmAgEd);
+				String ans = input("Is book damaged? (Y/N): "); //String AnS = iNpUt("Is book damaged? (Y/N): ");
+				boolean isDamaged = false; //boolean Is_DAmAgEd = false;
+				if (ans.toUpperCase().equals("Y")) {	//if (AnS.toUpperCase().equals("Y"))				
+					isdamaged = true; //Is_DAmAgEd = true;
+					{
+				controlDischargeLoan(Is_DAmAgEd); //CoNtRoL.dIsChArGe_lOaN(Is_DAmAgEd);
 			
 			case COMPLETED:
-				oUtPuT("Return processing complete");
+				output("Return processing complete"); //oUtPuT("Return processing complete");
 				return;
 			
 			default:
-				oUtPuT("Unhandled state");
-				throw new RuntimeException("ReturnBookUI : unhandled state :" + StATe);			
+				output("Unhandled state"); //oUtPuT("Unhandled state");
+				throw new RuntimeException("ReturnBookUI : unhandled state :" + state); //throw new RuntimeException("ReturnBookUI : unhandled state :" + StATe);			
 			}
 		}
 	}
 
 	
-	private String iNpUt(String PrOmPt) {
-		System.out.print(PrOmPt);
-		return iNpUt.nextLine();
+	private String input(String prompt) { //private String iNpUt(String PrOmPt) {
+		System.out.print(prompt); //System.out.print(PrOmPt);
+		return input.nextLine(); //return iNpUt.nextLine();
 	}	
 		
 		
-	private void oUtPuT(Object ObJeCt) {
-		System.out.println(ObJeCt);
+	private void output(Object object) { //private void oUtPuT(Object ObJeCt) {
+		System.out.println(object); //System.out.println(ObJeCt);
 	}
 	
 			
-	public void DiSpLaY(Object object) {
-		oUtPuT(object);
+	public void display(object object) { //public void DiSpLaY(Object object) {
+		output(object); //oUtPuT(object);
 	}
 	
-	public void sEt_sTaTe(uI_sTaTe state) {
-		this.StATe = state;
+	public void setState(uiState state) { //public void sEt_sTaTe(uI_sTaTe state) {
+		this.state = state; //this.StATe = state;
 	}
 
 	
