@@ -21,12 +21,18 @@ public class Loan implements Serializable {
 
 
 	
-	public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
-		this.LoAn_Id = loanId;
+	public Loan(int loanId, Book book, Member member, Date deuDate) { //public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
+		/* this.LoAn_Id = loanId;
 		this.BoOk = bOoK;
 		this.MeMbEr = mEmBeR;
 		this.DaTe = DuE_dAtE;
-		this.StAtE = lOaN_sTaTe.CURRENT;
+		this.StAtE = lOaN_sTaTe.CURRENT; */
+		
+		this.loanId = loanId;
+		this.book = book;
+		this.member = member;
+		this.date = dueDate;
+		this.state = loanState.CURRENT;
 	}
 
 	
@@ -43,13 +49,13 @@ public class Loan implements Serializable {
 	}
 
 	
-	public Integer GeT_Id() {
-		return LoAn_Id;
+	public Integer getId() { // public Integer GeT_Id()
+		return loanId; //return LoAn_Id;
 	}
 
 
-	public Date GeT_DuE_DaTe() {
-		return DaTe;
+	public Date getDueDate() { //public Date GeT_DuE_DaTe() {
+		return date; //return DaTe;
 	}
 	
 	
@@ -57,29 +63,29 @@ public class Loan implements Serializable {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 		StringBuilder sb = new StringBuilder();
-		sb.append("Loan:  ").append(LoAn_Id).append("\n")
-		  .append("  Borrower ").append(MeMbEr.GeT_ID()).append(" : ")
-		  .append(MeMbEr.GeT_LaSt_NaMe()).append(", ").append(MeMbEr.GeT_FiRsT_NaMe()).append("\n")
-		  .append("  Book ").append(BoOk.gEtId()).append(" : " )
-		  .append(BoOk.gEtTiTlE()).append("\n")
+		sb.append("Loan:  ").append(loanId).append("\n") //sb.append("Loan:  ").append(LoAn_Id).append("\n")
+		  .append("  Borrower ").append(member.getId()).append(" : ") //.append("  Borrower ").append(MeMbEr.GeT_ID()).append(" : ")
+		  .append(member.getLastName()).append(", ").append(member.getFirstName()).append("\n") //  .append(MeMbEr.GeT_LaSt_NaMe()).append(", ").append(MeMbEr.GeT_FiRsT_NaMe()).append("\n")
+		  .append("  Book ").append(book.getId()).append(" : " ) //.append("  Book ").append(BoOk.gEtId()).append(" : " )
+		  .append(book.getTittle()).append("\n") // .append(BoOk.gEtTiTlE()).append("\n")
 		  .append("  DueDate: ").append(sdf.format(DaTe)).append("\n")
-		  .append("  State: ").append(StAtE);		
+		  .append("  State: ").append(state);		//.append("  State: ").append(StAtE);	
 		return sb.toString();
 	}
 
 
-	public Member GeT_MeMbEr() {
-		return MeMbEr;
+	public Member GeT_MeMbEr() { //public Member getMember() {
+		return member; //return MeMbEr;
 	}
 
 
-	public Book GeT_BoOk() {
-		return BoOk;
+	public Book getBook() { // public Book GeT_BoOk() {
+		return book; //return BoOk;
 	}
 
 
-	public void DiScHaRgE() {
-		StAtE = lOaN_sTaTe.DISCHARGED;		
+	public void discharge() { //public void DiScHaRgE() {
+		state = loanState.DISCHARGED;	//StAtE = lOaN_sTaTe.DISCHARGED;		
 	}
 
 }
