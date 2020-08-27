@@ -53,63 +53,64 @@ public class Book implements Serializable {
 	}
 
 	public String getTitle() {   // public Integer gEtTiTlE()- method name change from gEtTiTlE() to getTitle()
-		return tItLe; // variable name chang from tItLe to title
+		return title; // variable name chang from tItLe to title
 	}
 
 
 	
-	public boolean iS_AvAiLaBlE() { 	// public Integer iS_AvAiLaBlE()- method name change from iS_AvAiLaBlE() to isAvalable()
+	public boolean isAvAiLaBlE() { 	// public Integer iS_AvAiLaBlE()- method name change from iS_AvAiLaBlE() to isAvalable()
 	}
 
 	
-	public boolean iS_On_LoAn() {		// public Integer iS_On_LoAn()- method name change from iS_On_LoAn() to isOnLoan()
-		return StAtE == sTaTe.ON_LOAN;	//return state == stste.OnLoan	
+	public boolean isOnLoan() {		// public Integer iS_On_LoAn()- method name change from iS_On_LoAn() to isOnLoan()
+		return state == state.onLoan;	//return state == stste.onLoan	
 	}
 
 	
-	public boolean iS_DaMaGeD() {
-		return StAtE == sTaTe.DAMAGED;
+	public boolean isDamaged() { //public boolean iS_DaMaGeD() {
+		return state == state.DAMAGED; //return StAtE == sTaTe.DAMAGED;
 	}
 
 	
-	public void BoRrOw() {
-		if (StAtE.equals(sTaTe.AVAILABLE)) 
-			StAtE = sTaTe.ON_LOAN;
-		
+	public void borrow() { //public void BoRrOw() {
+		if (state.equals(state.AVAILABLE)){ //if (StAtE.equals(sTaTe.AVAILABLE)) 
+			state = sate.onLoan; //  StAtE = sTaTe.ON_LOAN; 
+		}
 		else 
-			throw new RuntimeException(String.format("Book: cannot borrow while book is in state: %s", StAtE));
+			throw new RuntimeException(String.format("Book: cannot borrow while book is in state: %s", state)); //throw new RuntimeException(String.format("Book: cannot borrow while book is in state: %s", StAtE));
 		
 		
 	}
 
 
-	public void ReTuRn(boolean DaMaGeD) {
-		if (StAtE.equals(sTaTe.ON_LOAN)) {		//curly brackets "{ " use for if else statement
+	public void return(boolean damaged) { //public void ReTuRn(boolean DaMaGeD) {
+		//if (StAtE.equals(sTaTe.ON_LOAN))
+		if (state.equals(state.onLoan)) {		//curly brackets "{ " use for if else statement
 			
-			if (DaMaGeD) {
-				StAtE = sTaTe.DAMAGED;
+			if (damaged) { //if (DaMaGeD) {
+				state = state.DAMAGED; //StAtE = sTaTe.DAMAGED;
 			}
 			
 			else {
-				StAtE = sTaTe.AVAILABLE;
+				state = state.AVAILABLE; // StAtE = sTaTe.AVAILABLE
 			}
 		}
 			
 		
 		else {
-			throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", StAtE));
+			throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", state)); //throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", StAtE));
 		}
 				
 	}
 
 	
-	public void RePaIr() {
-		if (StAtE.equals(sTaTe.DAMAGED)) {
-			StAtE = sTaTe.AVAILABLE;
+	public void repair() { //public void RePaIr() {
+		if (state.equals(state.DAMAGED)) { //if (StAtE.equals(sTaTe.DAMAGED)) {
+			state = state.AVAILABLE; //StAtE = sTaTe.AVAILABLE;
 		}
 		
 		else {
-			throw new RuntimeException(String.format("Book: cannot repair while book is in state: %s", StAtE));
+			throw new RuntimeException(String.format("Book: cannot repair while book is in state: %s", state)); //throw new RuntimeException(String.format("Book: cannot repair while book is in state: %s", StAtE));
 		}
 		
 	}
